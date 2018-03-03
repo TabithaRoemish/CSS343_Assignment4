@@ -6,17 +6,20 @@
 
 #ifndef MOVIE_H
 #define MOVIE_H
-
+#include <vector>
 #include <string>
 
 class Movie
 {
 public:
 	virtual void print() = 0;
-	virtual ~Movie();
-	static Movie * create(std::string identifier);
-	bool operator>(Movie & mv);
-	bool operator==(Movie & mv);
+	virtual ~Movie() {};
+	static Movie * create(std::string identifier); //return nullptr if error in string
+	virtual bool operator>(Movie & mv) = 0;
+	virtual bool operator==(Movie & mv) = 0;
+	std::vector<char> videoCode{ 'F', 'C', 'D' }; // hardcoded, need to update if new genres added
 };
+
+//can we just define create here? do wo have to make another freaking file?
 
 #endif

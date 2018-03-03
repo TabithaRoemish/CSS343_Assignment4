@@ -21,6 +21,27 @@
     <ClCompile Include="comedy.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="binarysearchtree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="binarynode.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="drama.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="classic.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="store.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="customer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="borrow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="movie.h">
@@ -42,6 +63,24 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="borrow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binarysearchtree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="binarynode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="return.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="customer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="inventory.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="history.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

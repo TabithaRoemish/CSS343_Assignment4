@@ -116,15 +116,28 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ass4.cpp" />
+    <ClCompile Include="binarynode.cpp" />
+    <ClCompile Include="binarysearchtree.cpp" />
+    <ClCompile Include="borrow.cpp" />
+    <ClCompile Include="classic.cpp" />
     <ClCompile Include="comedy.cpp" />
+    <ClCompile Include="customer.cpp" />
+    <ClCompile Include="drama.cpp" />
+    <ClCompile Include="store.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="binarynode.h" />
+    <ClInclude Include="binarysearchtree.h" />
     <ClInclude Include="borrow.h" />
     <ClInclude Include="classic.h" />
     <ClInclude Include="comedy.h" />
     <ClInclude Include="commands.h" />
+    <ClInclude Include="customer.h" />
     <ClInclude Include="drama.h" />
+    <ClInclude Include="history.h" />
+    <ClInclude Include="inventory.h" />
     <ClInclude Include="movie.h" />
+    <ClInclude Include="return.h" />
     <ClInclude Include="store.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

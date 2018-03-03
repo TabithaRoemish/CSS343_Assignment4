@@ -1,5 +1,5 @@
 //	File Name: classic.h
-//	Programmer: Tabitha Roemish
+//	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: classic class declaration
 
@@ -13,8 +13,8 @@
 class Classic : public Movie
 {
 public:
-	Classic(); // store movie in map<std::string titleDirector, movie *> C
-	virtual ~Classic();
+	Classic(int stock, std::string director, std::string title, std::string actor, int month, int year);
+	virtual ~Classic() {};
 	virtual void print(); //C, 10, George Cukor, Holiday, Cary Grant 9 1938
 
 	//sort by Release date then major actor
