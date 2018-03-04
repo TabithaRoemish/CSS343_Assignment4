@@ -9,7 +9,7 @@
 #include <map>
 #include "movie.h"
 #include "customer.h"
-#include "binarysearchtree.h" //for movie maps
+
 
 class Store
 {
@@ -30,7 +30,7 @@ private:
 	//classic - year + actor
 	//Comedy = Title + year
 	//Drama = director + title
-	std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>*>> collection; //maybe use map instead
+	std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; //maybe use map instead
 	//customer hash 
 	
 	Movie * findMovie(std::string mediaType, std::string genreCode, std::string stringKey); // return nullPtr if not found

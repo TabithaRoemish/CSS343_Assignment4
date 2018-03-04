@@ -6,6 +6,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 #include <string>
+#include <queue>
 
 class Customer
 {
@@ -14,6 +15,8 @@ public:
 private:
 	int CustomerID;
 	std::string CustomerName;
+	std::queue<Movie*> movieList;
+	std::queue<Command*> commandHistory;
 };
 
 #endif

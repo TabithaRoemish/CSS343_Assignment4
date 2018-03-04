@@ -4,6 +4,8 @@
 //	File contains: store class definitions
 
 #include "store.h"
+#include <fstream>
+#include <iostream>
 
 Store::~Store()
 {
@@ -12,11 +14,38 @@ Store::~Store()
 }
 void Store::readDVDMovies(std::string filename)
 {
+	std::ifstream toRead(filename);
+
 	std::string input;
 	//while file not empty
 	/*Movie * mvPtr = Movie::create(input);*/
 		//if mvPtr!= nullptr
 			/*collection["D"].at("F")->add(mvPtr);*/
+
+	if (toRead.is_open())
+
+	{
+		std::getline(toRead, parse);
+		while (std::getline(toRead, parse))
+		{
+			ss << parse;
+			ss >> startVertex >> endVertex >> weight;
+
+			add(startVertex, endVertex, weight);
+
+			//reset
+			startVertex = " ";
+			endVertex = " ";
+			parse = " ";
+			ss.clear();
+		}
+
+	}
+	else
+
+		std::cerr << "Could not open file: " << filename;
+
+	toRead.close();
 	
 }
 
