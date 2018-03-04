@@ -7,6 +7,8 @@
 #define CUSTOMER_H
 #include <string>
 #include <queue>
+#include "movie.h"
+#include "command.h"
 
 class Customer
 {
@@ -16,7 +18,8 @@ private:
 	int CustomerID;
 	std::string CustomerName;
 	std::queue<Movie*> movieList;
-	std::queue<Command*> commandHistory;
+	/*std::queue<Command*> commandHistory;*/
+	
 };
 
 #endif

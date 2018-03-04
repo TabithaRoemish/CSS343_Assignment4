@@ -6,6 +6,7 @@
 #include "store.h"
 #include <fstream>
 #include <iostream>
+#include <sstream>
 
 Store::~Store()
 {
@@ -31,7 +32,7 @@ void Store::readDVDMovies(std::string filename)
 		std::getline(toRead, input);
 		while (std::getline(toRead, input))
 		{
-			Movie * mvPtr = Movie::create(input);
+			Movie * mvPtr = nullptr; //Movie::create(input);
 			if (mvPtr != nullptr)
 			{
 				std::string code = input.substr(1, 1);
@@ -48,26 +49,51 @@ void Store::readDVDMovies(std::string filename)
 
 void Store::readCustomers(std::string filename)
 {
+	//1111 Mouse Mickey 
+	//1000 Mouse Minnie
+	std::ifstream toRead(filename);
 	std::string input;
-	//while file not empty
-		//get int, get string
-		//create customer
-		//add customer to customer list
+	std::stringstream ss;
+	int custId = 0;
+	std::string custName = "";
+	
+	if (toRead.is_open())
+	{
+		while (std::getline(toRead, input))
+		{
+
+			ss << input;
+			ss >> custId >> custName;
+			Customer * cust = new Customer(custId, custName);
+			customerList.insert(custId, cust);
+		}
+	}
+	else
+		std::cerr << "Could not open file: " << filename;
+	toRead.close();
 }
 
 void Store::readCommands(std::string filename)
 {
+	std::ifstream toRead(filename);
 	std::string input;
-	//while file not empty
-		//get string
-		//create(string input)
+
+	if (toRead.is_open())
+	{
+		while (std::getline(toRead, input))
+			/*Command * cmd = Command::create(input);*/
+			;
+	}
+	else
+		std::cerr << "Could not open file: " << filename;
+	toRead.close();
 }
 
 Movie * Store::findMovie(std::string mediaType, std::string genreCode, std::string stringKey)
 {
 	Movie * found = nullptr;
 	//check collection
-	//Collection[mediaType].at(genreCode)->contains(
+	//if(Collection[mediaType][genreCode].find[stringKey] != -1)
 	return found;
 }
 

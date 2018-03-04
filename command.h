@@ -1,11 +1,11 @@
-//	File Name: commands.h
+//	File Name: command.h
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: Command class declaration
 //		command class is abstract class for movie types (Borrow[B], Return[R], Inventory[I], History[H])
 
-#ifndef COMMANDS_H
-#define COMMANDS_H
+#ifndef COMMAND_H
+#define COMMAND_H
 #include <string>
 #include "movie.h"
 #include "customer.h"

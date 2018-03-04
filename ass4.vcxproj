@@ -121,6 +121,7 @@
     <ClCompile Include="comedy.cpp" />
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="drama.cpp" />
+    <ClCompile Include="hashtable.cpp" />
     <ClCompile Include="history.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="return.cpp" />
@@ -130,9 +131,10 @@
     <ClInclude Include="borrow.h" />
     <ClInclude Include="classic.h" />
     <ClInclude Include="comedy.h" />
-    <ClInclude Include="commands.h" />
+    <ClInclude Include="command.h" />
     <ClInclude Include="customer.h" />
     <ClInclude Include="drama.h" />
+    <ClInclude Include="hashtable.h" />
     <ClInclude Include="history.h" />
     <ClInclude Include="inventory.h" />
     <ClInclude Include="movie.h" />

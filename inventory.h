@@ -5,7 +5,7 @@
 
 #ifndef INVENTORY_H
 #define INVENTORY_H
-#include "commands.h"
+#include "command.h"
 #include <string>
 
 class Inventory

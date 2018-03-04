@@ -7,10 +7,9 @@
 #define STORE_H
 #include <string>
 #include <map>
-#include "movie.h"
-#include "customer.h"
 #include <vector>
-
+#include "customer.h"
+#include "hashtable.h"
 
 class Store
 {
@@ -33,7 +32,7 @@ private:
 	//Drama = director + title
 	std::vector<std::string> inventory;
 	std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; //maybe use map instead
-	//customer hash 
+	HashMap customerList;
 	
 	Movie * findMovie(std::string mediaType, std::string genreCode, std::string stringKey); // return nullPtr if not found
 	Customer* findCustomer(int custID); // return nullPtr if not found
