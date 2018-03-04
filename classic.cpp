@@ -13,7 +13,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
     this->title = title;
     this->releaseMonth = month;
     this->releaseYear = year;
-    //this->key = title + std::to_string (year);
+    this->key = title + std::to_string (year);
 }
 
 void Classic::print()
