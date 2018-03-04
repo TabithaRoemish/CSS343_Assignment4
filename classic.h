@@ -28,7 +28,7 @@ private:
 	std::string actor;
 	int releaseMonth;
 	int releaseYear;
-
+	std::string key; //Title + year to store in BST and we can check key match rather than check random properties
 
 };
 
