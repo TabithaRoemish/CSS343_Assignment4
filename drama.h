@@ -25,7 +25,7 @@ private:
 	std::string director;
 	std::string title;
 	int releaseYear;
-	
+	std::string key; //Title + year to store in BST and we can check key match rather than check random properties
 };
 
 #endif

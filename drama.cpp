@@ -4,24 +4,40 @@
 //	File contains: drama class definitions
 
 #include "drama.h"
+#include <iostream>
 
 Drama::Drama(int stock, std::string director, std::string title, std::string actor, int year)
 {
-
-}//needs to be completed
+    this->stock = stock;
+    this->director = director;
+    this->title = title;
+    this->releaseYear = year;
+    this->key = title + std::to_string (year);
+}
 
 void Drama::print()
-{// D, 10, Steven Spielberg, Schindler's List, 1993
- 
- //needs to be completed
+{
+    // D, 10, Steven Spielberg, Schindler's List, 1993
+    // print out the movie type, stock, director, title, and
+    // release year
+    std::cout << "F, " << this->stock << ", " << this->director << ", " <<
+    this->title << ", " << this->releaseYear << std::endl;
 }
 				  
 bool Drama::operator>(Drama & dm)
 {
-	return true; //needs to be completed
+    if (this->director > dm.director)
+        return true;
+    else if (this->director == dm.director)
+        if (this->title > dm.title)
+            return true;
+    return false;
 }
 
 bool Drama::operator==(Drama & dm)
 {
-	return true;//needs to be completed
+    if (this->director == dm.director && this->title == dm.title)
+        return true;
+    else
+        return false;
 }
