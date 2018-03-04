@@ -116,20 +116,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ass4.cpp" />
-    <ClCompile Include="binarynode.cpp" />
-    <ClCompile Include="binarysearchtree.cpp" />
     <ClCompile Include="borrow.cpp" />
     <ClCompile Include="classic.cpp" />
     <ClCompile Include="comedy.cpp" />
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="drama.cpp" />
+    <ClCompile Include="history.cpp" />
     <ClCompile Include="inventory.cpp" />
     <ClCompile Include="return.cpp" />
     <ClCompile Include="store.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="binarynode.h" />
-    <ClInclude Include="binarysearchtree.h" />
     <ClInclude Include="borrow.h" />
     <ClInclude Include="classic.h" />
     <ClInclude Include="comedy.h" />
