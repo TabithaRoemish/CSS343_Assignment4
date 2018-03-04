@@ -12,7 +12,7 @@ Drama::Drama(int stock, std::string director, std::string title, std::string act
     this->director = director;
     this->title = title;
     this->releaseYear = year;
-    //this->key = title + std::to_string (year);
+    this->key = title + std::to_string (year);
 }
 
 void Drama::print()
