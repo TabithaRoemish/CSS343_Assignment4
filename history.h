@@ -5,16 +5,16 @@
 
 #ifndef HISTORY_H
 #define HISTORY_H
-#include "commands.h"
+#include "command.h"
 #include <string>
 
 class History
 {
 public:
 	History(Customer * custptr);
-
-private:
-	Customer * customerPtr;
+	~History() {};
+	virtual void print();
+	virtual void execute();
 
 };
 

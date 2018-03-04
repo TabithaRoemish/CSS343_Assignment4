@@ -8,6 +8,7 @@
 #include <string>
 #include <map>
 #include <vector>
+#include <set>
 #include "customer.h"
 #include "hashtable.h"
 
@@ -30,12 +31,14 @@ private:
 	//classic - year + actor
 	//Comedy = Title + year
 	//Drama = director + title
-	std::vector<std::string> inventory;
-	std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; //maybe use map instead
-	HashMap customerList;
+	static std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; //maybe use map instead
+	static HashMap customerList;
+	static std::set<std::string> commandCodes;
+	static std::set<std::string> mediaCodes;
+	static std::set<std::string> movieCodes;
 	
-	Movie * findMovie(std::string mediaType, std::string genreCode, std::string stringKey); // return nullPtr if not found
-	Customer* findCustomer(int custID); // return nullPtr if not found
+	//Movie * findMovie(std::string mediaType, std::string genreCode, std::string stringKey); // return nullPtr if not found
+	//Customer* findCustomer(int custID); // return nullPtr if not found
 	void printInventory();
 };
 

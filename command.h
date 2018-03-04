@@ -9,16 +9,20 @@
 #include <string>
 #include "movie.h"
 #include "customer.h"
-#include <vector>
+#include <set>
+#include "store.h"
 
 class Command
 {
 public:
+	virtual ~Command() {};
 	virtual void print() = 0;
-	virtual ~Command();
-	virtual void execute();
+	virtual void execute() = 0;
 	static Command * create(std::string identifier);
-	std::vector<char> commandCodes{ 'B', 'R', 'I', 'H' };
+
+private:
+	Movie * mvPtr;
+	Customer * custPtr;
 };
 
 //Command::create(std::string input)

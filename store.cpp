@@ -8,6 +8,10 @@
 #include <iostream>
 #include <sstream>
 
+std::set<std::string> Store::commandCodes = { "B", "R", "I", "H" };
+std::set<std::string> Store::mediaCodes = { "D" };
+std::set<std::string> Store::movieCodes = { "C", "D", "F" };
+
 Store::~Store()
 {
 	//iterate through customer list, delete customers
@@ -89,22 +93,22 @@ void Store::readCommands(std::string filename)
 	toRead.close();
 }
 
-Movie * Store::findMovie(std::string mediaType, std::string genreCode, std::string stringKey)
-{
-	Movie * found = nullptr;
-	//check collection
-	//if(Collection[mediaType][genreCode].find[stringKey] != -1)
-	return found;
-}
+//Movie * Store::findMovie(std::string mediaType, std::string genreCode, std::string stringKey)
+//{
+//	Movie * found = nullptr;
+//	//check collection
+//	//if(Collection[mediaType][genreCode].find[stringKey] != -1)
+//	return found;
+//}
 
-Customer * Store::findCustomer(int custID)
-{
-	Customer * found = nullptr;
-	//check customer hashmap
-	return found;
-}
-
-void Store::printInventory()
-{
-
-}
+//Customer * Store::findCustomer(int custID)
+//{
+//	Customer * found = nullptr;
+//	//check customer hashmap
+//	return found;
+//}
+//
+//void Store::printInventory()
+//{
+//
+//}

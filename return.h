@@ -14,10 +14,9 @@ public:
 	//needs to check customer exists, media type is D, movie exists in customer borrowed queue
 	Return(Customer * custPtr, Movie * mvPtr);
 	~Return();
+	virtual void print();
 	virtual void execute();
-private:
-	//Customer * customerPtr;
-	//Movie * moviePtr;
+
 };
 
 #endif

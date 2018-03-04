@@ -11,8 +11,10 @@
 class Inventory
 {
 public:
-private:
-
+	Inventory();
+	virtual ~Inventory() {};
+	virtual void print();
+	virtual void execute();
 };
 
 #endif

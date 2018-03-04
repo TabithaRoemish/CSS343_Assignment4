@@ -15,10 +15,9 @@ public:
 	//needs to check customer exists, media type is D, movie exists (use movie code to pull correct map, check map)
 	Borrow(Customer *custPtr, Movie* mvPtr); 
 	~Borrow() {};
-	virtual void execute(); 
-private:
-	Customer * customerPtr;
-	Movie * moviePtr;
+	virtual void print();
+	virtual void execute();
+
 };
 
 #endif
