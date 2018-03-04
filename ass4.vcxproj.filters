@@ -42,6 +42,9 @@
     <ClCompile Include="borrow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="return.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="movie.h">

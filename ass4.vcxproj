@@ -123,6 +123,7 @@
     <ClCompile Include="comedy.cpp" />
     <ClCompile Include="customer.cpp" />
     <ClCompile Include="drama.cpp" />
+    <ClCompile Include="return.cpp" />
     <ClCompile Include="store.cpp" />
   </ItemGroup>
   <ItemGroup>

@@ -77,6 +77,8 @@ private:
     BinaryNode<ItemType>* findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const;
     // helper function for displaySideways to work recursively
     void sideways(BinaryNode<ItemType>* current, int level) const;
+	
+	static int insertCount;
 
 	// other functions....
 	void deleteTree(BinaryNode<ItemType>* current);
