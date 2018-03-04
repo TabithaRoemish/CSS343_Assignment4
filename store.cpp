@@ -14,35 +14,32 @@ Store::~Store()
 }
 void Store::readDVDMovies(std::string filename)
 {
+  /*F, 10, Nora Ephron, You've Got Mail, 1998       
+	D, 10, Steven Spielberg, Schindler's List, 1993       
+	C, 10, George Cukor, Holiday, Katherine Hepburn 9 1938       
+	C, 10, George Cukor, Holiday, Cary Grant 9 1938       
+	Z, 10, Hal Ashby, Harold and Maude, Ruth Gordon 2 1971       
+	D, 10, Phillippe De Broca, King of Hearts, 1967*/
+
 	std::ifstream toRead(filename);
 
 	std::string input;
-	//while file not empty
-	/*Movie * mvPtr = Movie::create(input);*/
-		//if mvPtr!= nullptr
-			/*collection["D"].at("F")->add(mvPtr);*/
 
 	if (toRead.is_open())
 
 	{
-		std::getline(toRead, parse);
-		while (std::getline(toRead, parse))
+		std::getline(toRead, input);
+		while (std::getline(toRead, input))
 		{
-			ss << parse;
-			ss >> startVertex >> endVertex >> weight;
-
-			add(startVertex, endVertex, weight);
-
-			//reset
-			startVertex = " ";
-			endVertex = " ";
-			parse = " ";
-			ss.clear();
+			Movie * mvPtr = Movie::create(input);
+			if (mvPtr != nullptr)
+			{
+				std::string code = input.substr(1, 1);
+				collection["D"][code][mvPtr->getKey()] = mvPtr;
+			}
 		}
-
 	}
 	else
-
 		std::cerr << "Could not open file: " << filename;
 
 	toRead.close();

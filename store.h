@@ -9,6 +9,7 @@
 #include <map>
 #include "movie.h"
 #include "customer.h"
+#include <vector>
 
 
 class Store
@@ -25,11 +26,12 @@ public:
 	
 
 private:
-	//first map is for media type (DVD) to add to collection DVDcollection["DVD"].at(Genre(F,C,D))->add(*mv)]
+	
 	//each binary tree needs to have it's own key (smash up of properties)
 	//classic - year + actor
 	//Comedy = Title + year
 	//Drama = director + title
+	std::vector<std::string> inventory;
 	std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; //maybe use map instead
 	//customer hash 
 	
