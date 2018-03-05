@@ -5,7 +5,18 @@
 
 #include "customer.h"
 
-Customer::Customer(int ID, std::string)
+Customer::Customer(int ID, std::string nm)
 {
+	CustomerID = ID;
+	CustomerName = nm;
+}
 
+void Customer::addCommand(Command* cmd)
+{
+	commandHistory.push(cmd);
+}
+
+void Customer::addMovie(Movie* mv)
+{
+	movieList.push(mv);
 }

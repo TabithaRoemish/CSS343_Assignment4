@@ -5,7 +5,9 @@
 
 #include "borrow.h"
 
+
 Borrow::Borrow(Customer *custPtr, Movie* mvPtr)
 {
-
+	custPtr->commandHistory.push(*this);
+	mvPtr->
 }

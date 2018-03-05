@@ -1,3 +1,45 @@
-﻿  hashtable.cpp
-  ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.exe
-  ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.pdb (Partial PDB)
+﻿  store.cpp
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  drama.cpp
+  command.cpp
+  comedy.cpp
+  classic.cpp
+  borrow.cpp
+e:\css 343\assignment 4\ass4\ass4\borrow.cpp(12): error C2059: syntax error: '}'
+  Generating Code...
+e:\css 343\assignment 4\ass4\ass4\command.cpp(109): warning C4715: 'Command::create': not all control paths return a value
+e:\css 343\assignment 4\ass4\ass4\command.cpp(137): error C4703: potentially uninitialized local pointer variable 'cmd' used
+  Compiling...
+  return.cpp
+  inventory.cpp
+  hashtable.cpp
+e:\css 343\assignment 4\ass4\ass4\store.h(35): error C3646: 'customerList': unknown override specifier
+e:\css 343\assignment 4\ass4\ass4\store.h(35): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  customer.cpp
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(15): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(15): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(15): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(16): error C2061: syntax error: identifier 'Customer'
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(18): error C2065: 'customer': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(18): error C2065: 'cust': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(29): error C2061: syntax error: identifier 'Customer'
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(30): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(30): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\hashtable.h(30): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  ass4.cpp
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\command.h(25): error C2238: unexpected token(s) preceding ';'
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  Generating Code...

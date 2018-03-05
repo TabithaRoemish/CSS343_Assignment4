@@ -14,11 +14,13 @@ class Customer
 {
 public:
 	Customer(int ID, std::string);
+	void addCommand(Command* cmd);
+	void addMovie(Movie* mv);
 private:
 	int CustomerID;
 	std::string CustomerName;
 	std::queue<Movie*> movieList;
-	/*std::queue<Command*> commandHistory;*/
+	std::queue<Command*> commandHistory;
 	
 };
 
