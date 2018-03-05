@@ -16,6 +16,8 @@ public:
 	Customer(int ID, std::string);
 	void addCommand(Command* cmd);
 	void addMovie(Movie* mv);
+	//add clear commands,
+	// add clear movie list;
 private:
 	int CustomerID;
 	std::string CustomerName;

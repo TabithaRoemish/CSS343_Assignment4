@@ -6,8 +6,15 @@
 #include "borrow.h"
 
 
-Borrow::Borrow(Customer *custPtr, Movie* mvPtr)
+Borrow::Borrow(Customer *cust, Movie* mv)
 {
-	custPtr->commandHistory.push(*this);
-	mvPtr->
+	mvPtr = mv;
+	custPtr = cust;
+}
+
+void Borrow::execute()
+{
+	custPtr->addCommand(this);
+	custPtr->addMovie(mvPtr);
+	//remove one from stock of movie
 }

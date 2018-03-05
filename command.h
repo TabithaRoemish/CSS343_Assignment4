@@ -21,8 +21,6 @@ public:
 	static Command * create(std::string identifier);
 
 private:
-	Movie * mvPtr;
-	Customer * custPtr;
 	static Command * make(char actionType, Customer * cust, Movie * mv);
 };
 

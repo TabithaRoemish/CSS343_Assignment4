@@ -18,6 +18,9 @@ public:
 	virtual void print();
 	virtual void execute();
 
+private:
+	Movie * mvPtr;
+	Customer * custPtr;
 };
 
 #endif
