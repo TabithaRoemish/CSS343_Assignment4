@@ -21,9 +21,6 @@ public:
 	std::vector<char> videoCode{ 'F', 'C', 'D' }; // hardcoded, need to update if new genres added
 };
 
-// *Hi Prat, we might need to tweak something in the collection in the store so the movies are sorted correctly
-//  map sorts based on the key and our key is a string so we might need to do something so that it's sorting the movies. 
-
 //ex file)
 /*	F, 10, Nora Ephron, You've Got Mail, 1998
 	D, 10, Steven Spielberg, Schindler's List, 1993

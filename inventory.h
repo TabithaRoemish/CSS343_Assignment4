@@ -8,7 +8,7 @@
 #include "command.h"
 #include <string>
 
-class Inventory
+class Inventory : public Command
 {
 public:
 	Inventory();

@@ -4,3 +4,8 @@
 //	File contains: borrow class definition
 
 #include "borrow.h"
+
+Borrow::Borrow(Customer *custPtr, Movie* mvPtr)
+{
+
+}

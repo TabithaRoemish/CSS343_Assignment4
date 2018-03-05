@@ -23,6 +23,7 @@ public:
 private:
 	Movie * mvPtr;
 	Customer * custPtr;
+	static Command * make(char actionType, Customer * cust, Movie * mv);
 };
 
 //Command::create(std::string input)

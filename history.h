@@ -8,10 +8,10 @@
 #include "command.h"
 #include <string>
 
-class History
+class History : public Command
 {
 public:
-	History(Customer * custptr);
+	History(Customer * custPtr);
 	~History() {};
 	virtual void print();
 	virtual void execute();
