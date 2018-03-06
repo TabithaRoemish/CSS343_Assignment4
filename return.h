@@ -6,17 +6,20 @@
 #ifndef RETURN_H
 #define RETURN_H
 #include "command.h"
-
+#include "movie.h"
+#include "Customer.h"
 
 class Return : public Command
 {
 public:
-	//needs to check customer exists, media type is D, movie exists in customer borrowed queue
 	Return(Customer * custPtr, Movie * mvPtr);
 	~Return();
 	virtual void print();
 	virtual void execute();
 
+private:
+	Movie * mvPtr;
+	Customer * custPtr;
 };
 
 #endif

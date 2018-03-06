@@ -4,7 +4,7 @@
 //	File contains: borrow class definition
 
 #include "borrow.h"
-
+#include <iostream>
 
 Borrow::Borrow(Customer *cust, Movie* mv)
 {
@@ -17,4 +17,10 @@ void Borrow::execute()
 	custPtr->addCommand(this);
 	custPtr->addMovie(mvPtr);
 	//remove one from stock of movie
+}
+
+void Borrow::print()
+{
+	std::cout << "Borrowed: ";
+	mvPtr->print();
 }

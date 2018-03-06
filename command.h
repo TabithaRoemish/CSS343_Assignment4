@@ -12,6 +12,7 @@
 #include <set>
 #include "store.h"
 
+class Customer;
 class Command
 {
 public:

@@ -9,7 +9,7 @@
 #include <queue>
 #include "movie.h"
 #include "command.h"
-
+class Command;
 class Customer
 {
 public:

@@ -6,7 +6,9 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 #include "command.h"
+#include "customer.h"
 #include <string>
+
 
 class History : public Command
 {
@@ -16,6 +18,8 @@ public:
 	virtual void print();
 	virtual void execute();
 
+private:
+	Customer * custPtr;
 };
 
 #endif

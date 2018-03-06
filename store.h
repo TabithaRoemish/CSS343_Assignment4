@@ -11,7 +11,7 @@
 #include <set>
 #include "customer.h"
 #include "hashtable.h"
-
+class HashMap;
 class Store
 {
 public:
@@ -36,6 +36,8 @@ private:
 	static std::set<std::string> commandCodes;
 	static std::set<std::string> mediaCodes;
 	static std::set<std::string> movieCodes;
+	
+
 	
 	//Movie * findMovie(std::string mediaType, std::string genreCode, std::string stringKey); // return nullPtr if not found
 	//Customer* findCustomer(int custID); // return nullPtr if not found

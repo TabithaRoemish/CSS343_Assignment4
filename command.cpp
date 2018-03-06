@@ -33,6 +33,7 @@ Command * Command::create(std::string identifier)
 	std::string director = "";
 	std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>>
 		::iterator it = Store::collection.begin();
+	Command * cmd = nullptr;
 
 	//if inventory, skip the rest
 	if (actionCode == 'I')
@@ -59,7 +60,7 @@ Command * Command::create(std::string identifier)
 						|| Store::collection[movieCode][movieCode].count(yr + actor) == 1)
 					{
 						Movie * movie = Store::collection[movieCode][movieCode].at(yr + actor);
-						Command * cmd = make(actionCode, customer, movie);
+						cmd = make(actionCode, customer, movie);
 						cmd->execute();
 					}
 					else
@@ -73,7 +74,7 @@ Command * Command::create(std::string identifier)
 					if (Store::collection[movieCode][movieCode].count(director + title) == 1)
 					{
 						Movie * movie = Store::collection[movieCode][movieCode].at(director + title);
-						Command * cmd = make(actionCode, customer, movie);
+						cmd = make(actionCode, customer, movie);
 						cmd->execute();
 					}
 					else
@@ -88,7 +89,7 @@ Command * Command::create(std::string identifier)
 					if (Store::collection[movieCode][movieCode].count(title + yr) == 1)
 					{
 						Movie * movie = Store::collection[movieCode][movieCode].at(title + yr);
-						Command * cmd = make(actionCode, customer, movie);
+						cmd = make(actionCode, customer, movie);
 						cmd->execute();
 					}
 					else
@@ -106,11 +107,12 @@ Command * Command::create(std::string identifier)
 	else
 		std::cerr << "invalid action code" << std::endl;
 
+	return cmd;
 }
 
 Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 {
-	Command * cmd;
+	Command * cmd = nullptr;
 	switch (actionType) {
 	case 'B':
 	{

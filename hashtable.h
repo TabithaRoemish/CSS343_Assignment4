@@ -7,6 +7,7 @@
 #define HASHTABLE_H
 #include "customer.h"
 #define TABLE_SIZE 100
+class Customer;
 class HashElement
 {
 public:
