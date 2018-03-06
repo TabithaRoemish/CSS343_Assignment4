@@ -16,6 +16,7 @@ class Customer;
 class Command
 {
 public:
+	friend class Store;
 	virtual ~Command() {};
 	virtual void print() = 0;
 	virtual void execute() = 0;

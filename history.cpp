@@ -5,8 +5,19 @@
 //		Child class of Command class. 
 
 #include "history.h"
+#include "customer.h"
 
 History(Customer * cust)
 {
+	custPtr = cust;
+}
 
+void History::print()
+{
+	std::cout << "History: " << custPtr->getName();
+}
+
+void History::execute()
+{
+	custPtr->printCommandHistory();
 }

@@ -16,7 +16,9 @@ void Borrow::execute()
 {
 	custPtr->addCommand(this);
 	custPtr->addMovie(mvPtr);
-	//remove one from stock of movie
+	//check if stock available
+	// if yes, remove one from stock of movie
+	// else std::cout << "Movie is out of stock" << std::endl;
 }
 
 void Borrow::print()

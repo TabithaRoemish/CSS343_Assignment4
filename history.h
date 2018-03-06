@@ -9,6 +9,7 @@
 #include "customer.h"
 #include <string>
 
+class Customer;
 
 class History : public Command
 {

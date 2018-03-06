@@ -6,6 +6,7 @@
 #ifndef CUSTOMER_H
 #define CUSTOMER_H
 #include <string>
+#include <vector>
 #include <queue>
 #include "movie.h"
 #include "command.h"
@@ -16,12 +17,17 @@ public:
 	Customer(int ID, std::string);
 	void addCommand(Command* cmd);
 	void addMovie(Movie* mv);
+	bool movieRented(Movie* mv);
+	void returnMovie(Movie* mv);
+	std::string getName();
+	void printCommandHistory();
+	
 	//add clear commands,
 	// add clear movie list;
 private:
 	int CustomerID;
 	std::string CustomerName;
-	std::queue<Movie*> movieList;
+	std::vector<Movie*> movieList;
 	std::queue<Command*> commandHistory;
 	
 };
