@@ -7,6 +7,7 @@
 #include "history.h"
 #include "customer.h"
 
+
 History(Customer * cust)
 {
 	custPtr = cust;

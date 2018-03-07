@@ -10,16 +10,22 @@
 #include <queue>
 #include "movie.h"
 #include "command.h"
-class Command;
+
+
 class Customer
 {
 public:
+	Customer();
 	Customer(int ID, std::string);
+	void setID(int ID);
+	void setName(std::string nm);
+	std::string getName();
+	int getID();
 	void addCommand(Command* cmd);
 	void addMovie(Movie* mv);
 	bool movieRented(Movie* mv);
 	void returnMovie(Movie* mv);
-	std::string getName();
+	
 	void printCommandHistory();
 	
 	//add clear commands,

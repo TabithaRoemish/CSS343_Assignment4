@@ -5,6 +5,14 @@
 
 #include "customer.h"
 #include <iostream>
+
+//default constructor
+Customer::Customer()
+{
+	CustomerID = 0;
+	CustomerName = "";
+}
+
 //constructor
 Customer::Customer(int ID, std::string nm)
 {
@@ -23,6 +31,24 @@ void Customer::addCommand(Command* cmd)
 void Customer::addMovie(Movie* mv)
 {
 	movieList.push_back(mv);
+}
+
+//mutator - sets customerID
+void Customer::setID(int ID)
+{
+	CustomerID = ID;
+}
+
+//mutator - sets customer name
+void Customer::setName(std::string nm)
+{
+	CustomerName = nm;
+}
+
+//accessor - get private member, customer ID
+int Customer::getID()
+{
+	return CustomerID;
 }
 
 //accessor - gets private member, customer name

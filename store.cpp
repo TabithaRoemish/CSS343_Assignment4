@@ -93,22 +93,16 @@ void Store::readCommands(std::string filename)
 	toRead.close();
 }
 
-//Movie * Store::findMovie(std::string mediaType, std::string genreCode, std::string stringKey)
-//{
-//	Movie * found = nullptr;
-//	//check collection
-//	//if(Collection[mediaType][genreCode].find[stringKey] != -1)
-//	return found;
-//}
 
-//Customer * Store::findCustomer(int custID)
-//{
-//	Customer * found = nullptr;
-//	//check customer hashmap
-//	return found;
-//}
-//
-//void Store::printInventory()
-//{
-//
-//}
+void Store::printInventory()
+{
+
+	for (std::map<std::string, std::map<std::string, std::map<std::string, Movie*>>>
+		::iterator it = collection.begin(); it != collection.end(); it++)
+	{
+		std::cout << it->first;
+		std::cout << " ";
+		//need to finish this
+	}
+
+}

@@ -7,7 +7,10 @@
 #define RETURN_H
 #include "command.h"
 #include "movie.h"
-#include "Customer.h"
+#include "customer.h"
+
+class Movie;
+class Customer;
 
 class Return : public Command
 {

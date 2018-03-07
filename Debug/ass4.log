@@ -1,20 +1,73 @@
-﻿  hashtable.cpp
-  customer.cpp
+﻿  store.cpp
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  return.cpp
+e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2143: syntax error: missing ')' before '*'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2512: 'Return': no appropriate default constructor available
+  e:\css 343\assignment 4\ass4\ass4\return.h(12): note: see declaration of 'Return'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2059: syntax error: ')'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\return.cpp(12): error C2065: 'mvPtr': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\return.cpp(12): error C2059: syntax error: ';'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(13): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\return.cpp(13): error C2440: 'initializing': cannot convert from 'int *' to 'int'
+  e:\css 343\assignment 4\ass4\ass4\return.cpp(13): note: There is no context in which this conversion is possible
+e:\css 343\assignment 4\ass4\ass4\return.cpp(14): error C2059: syntax error: '}'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(14): error C2143: syntax error: missing ';' before '}'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(16): error C2143: syntax error: missing ';' before '{'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(16): error C2447: '{': missing function header (old-style formal list?)
+e:\css 343\assignment 4\ass4\ass4\return.cpp(22): error C2297: '*': illegal, right operand has type 'int *'
+e:\css 343\assignment 4\ass4\ass4\return.cpp(24): error C2664: 'void Customer::returnMovie(Movie *)': cannot convert argument 1 from 'int *' to 'Movie *'
+  e:\css 343\assignment 4\ass4\ass4\return.cpp(24): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
+e:\css 343\assignment 4\ass4\ass4\return.cpp(25): error C2660: 'Customer::addCommand': function does not take 1 arguments
+  inventory.cpp
+e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
+  history.cpp
+e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2143: syntax error: missing ')' before '*'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2143: syntax error: missing ';' before '*'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2512: 'History': no appropriate default constructor available
+  e:\css 343\assignment 4\ass4\ass4\history.h(13): note: see declaration of 'History'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2059: syntax error: ')'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
+e:\css 343\assignment 4\ass4\ass4\history.cpp(13): error C2065: 'custPtr': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\history.cpp(13): error C2059: syntax error: ';'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(14): error C2059: syntax error: '}'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(14): error C2143: syntax error: missing ';' before '}'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(17): error C2143: syntax error: missing ';' before '{'
+e:\css 343\assignment 4\ass4\ass4\history.cpp(17): error C2447: '{': missing function header (old-style formal list?)
+  hashtable.cpp
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
   command.cpp
+e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
+  borrow.cpp
+e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
+e:\css 343\assignment 4\ass4\ass4\borrow.cpp(17): error C2660: 'Customer::addCommand': function does not take 1 arguments
+  ass4.cpp
+e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
   Generating Code...
   Compiling...
-  store.cpp
-  return.cpp
-  inventory.cpp
-  borrow.cpp
-  ass4.cpp
+  customer.cpp
   Generating Code...
-borrow.obj : error LNK2001: unresolved external symbol "public: virtual void __thiscall Borrow::print(void)" (?print@Borrow@@UAEXXZ)
-command.obj : error LNK2019: unresolved external symbol "public: __thiscall Return::Return(class Customer *,class Movie *)" (??0Return@@QAE@PAVCustomer@@PAVMovie@@@Z) referenced in function "private: static class Command * __cdecl Command::make(char,class Customer *,class Movie *)" (?make@Command@@CAPAV1@DPAVCustomer@@PAVMovie@@@Z)
-command.obj : error LNK2019: unresolved external symbol "public: __thiscall Inventory::Inventory(void)" (??0Inventory@@QAE@XZ) referenced in function "private: static class Command * __cdecl Command::make(char,class Customer *,class Movie *)" (?make@Command@@CAPAV1@DPAVCustomer@@PAVMovie@@@Z)
-command.obj : error LNK2019: unresolved external symbol "public: __thiscall History::History(class Customer *)" (??0History@@QAE@PAVCustomer@@@Z) referenced in function "private: static class Command * __cdecl Command::make(char,class Customer *,class Movie *)" (?make@Command@@CAPAV1@DPAVCustomer@@PAVMovie@@@Z)
-command.obj : error LNK2001: unresolved external symbol "private: static class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > > > > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > > > > > > > > Store::collection" (?collection@Store@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@@std@@@2@@2@@std@@@2@@std@@A)
-store.obj : error LNK2001: unresolved external symbol "private: static class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > > > > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > >,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class std::map<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> >,class Movie *,struct std::less<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > >,class std::allocator<struct std::pair<class std::basic_string<char,struct std::char_traits<char>,class std::allocator<char> > const ,class Movie *> > > > > > > > > Store::collection" (?collection@Store@@0V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@V?$map@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@U?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@2@V?$allocator@U?$pair@$$CBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@PAVMovie@@@std@@@2@@2@@std@@@2@@2@@std@@@2@@std@@A)
-command.obj : error LNK2001: unresolved external symbol "private: static class HashMap Store::customerList" (?customerList@Store@@0VHashMap@@A)
-store.obj : error LNK2001: unresolved external symbol "private: static class HashMap Store::customerList" (?customerList@Store@@0VHashMap@@A)
-E:\CSS 343\Assignment 4\ass4\Debug\ass4.exe : fatal error LNK1120: 6 unresolved externals

@@ -8,11 +8,12 @@
 #define COMMAND_H
 #include <string>
 #include "movie.h"
-#include "customer.h"
+
 #include <set>
 #include "store.h"
 
 class Customer;
+
 class Command
 {
 public:
@@ -26,24 +27,5 @@ private:
 	static Command * make(char actionType, Customer * cust, Movie * mv);
 };
 
-//Command::create(std::string input)
-//{ get char, get custId, get mediaType code, get videoCode,
-//	check command code is valid else cout << "invalid action code"
-//
-//	Customer * = findCutomer(custId) 
-//	check customer not nullptr else  cout << "incorrect customer ID"
-//
-//  check genreCode corect else cout << invalid videoCode
-//  Movie * mvPtr;
-//	switch(char)
-//		case D : get director, get title
-//		if (mvPtr = Store::findDVDMovie(videoCode, stringKey) != nullptr) / else, cout << "invalid movie"
-//			new Command(custPtr, moviePtr);
-//		case C: get/check month, get year, get actor
-//		if (mvPtr = Store::findDVDMovie(videoCode, stringKey) != nullptr) / else, cout << "invalid movie"
-//			new Command(custPtr, moviePtr);
-//		case F: get title, get year
-//		if (mvPtr = Store::findDVDMovie(videoCode, stringKey) != nullptr) / else, cout << "invalid movie"
-//			new Command(custPtr, moviePtr);
 
 #endif

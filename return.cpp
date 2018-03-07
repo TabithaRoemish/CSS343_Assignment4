@@ -7,15 +7,22 @@
 #include "movie.h"
 #include "customer.h"
 
-Return(Customer * custPtr, Movie * mvPtr)
+Return(Customer * cust, Movie * mv)
 {
-
+	mvPtr = mv;
+	custPtr = cust;
 }
 void Return::print()
 {
-
+	std::cout << "Returned: ";
+	mvPtr->print();
 }
 void Return::execute()
 {
-
+	if (custPtr->movieRented(Movie* mv))
+	{
+		custPtr->returnMovie(mv);
+		custPtr->addCommand(this);
+		//add 1 to movie stock mv->addStock();
+	}
 }
