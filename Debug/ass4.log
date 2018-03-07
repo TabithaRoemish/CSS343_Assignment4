@@ -1,15 +1,14 @@
 ﻿  store.cpp
-e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
   return.cpp
-e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+e:\css 343\assignment 4\ass4\ass4\customer.h(24): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
 e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2143: syntax error: missing ')' before '*'
 e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2143: syntax error: missing ';' before '*'
 e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2512: 'Return': no appropriate default constructor available
-  e:\css 343\assignment 4\ass4\ass4\return.h(12): note: see declaration of 'Return'
+  e:\css 343\assignment 4\ass4\ass4\return.h(15): note: see declaration of 'Return'
 e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 e:\css 343\assignment 4\ass4\ass4\return.cpp(10): error C2059: syntax error: ')'
 e:\css 343\assignment 4\ass4\ass4\return.cpp(11): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -27,21 +26,21 @@ e:\css 343\assignment 4\ass4\ass4\return.cpp(24): error C2664: 'void Customer::r
   e:\css 343\assignment 4\ass4\ass4\return.cpp(24): note: Types pointed to are unrelated; conversion requires reinterpret_cast, C-style cast or function-style cast
 e:\css 343\assignment 4\ass4\ass4\return.cpp(25): error C2660: 'Customer::addCommand': function does not take 1 arguments
   inventory.cpp
-e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+e:\css 343\assignment 4\ass4\ass4\customer.h(24): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
   history.cpp
-e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+e:\css 343\assignment 4\ass4\ass4\customer.h(24): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2143: syntax error: missing ')' before '*'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2143: syntax error: missing ';' before '*'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2512: 'History': no appropriate default constructor available
-  e:\css 343\assignment 4\ass4\ass4\history.h(13): note: see declaration of 'History'
+  e:\css 343\assignment 4\ass4\ass4\history.h(12): note: see declaration of 'History'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(11): error C2059: syntax error: ')'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(12): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 e:\css 343\assignment 4\ass4\ass4\history.cpp(13): error C2065: 'custPtr': undeclared identifier
@@ -51,23 +50,19 @@ e:\css 343\assignment 4\ass4\ass4\history.cpp(14): error C2143: syntax error: mi
 e:\css 343\assignment 4\ass4\ass4\history.cpp(17): error C2143: syntax error: missing ';' before '{'
 e:\css 343\assignment 4\ass4\ass4\history.cpp(17): error C2447: '{': missing function header (old-style formal list?)
   hashtable.cpp
-e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
+  customer.cpp
   command.cpp
-e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+e:\css 343\assignment 4\ass4\ass4\customer.h(24): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
   borrow.cpp
-e:\css 343\assignment 4\ass4\ass4\customer.h(18): error C2061: syntax error: identifier 'Command'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2065: 'Command': undeclared identifier
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2059: syntax error: '>'
-e:\css 343\assignment 4\ass4\ass4\customer.h(31): error C2976: 'std::queue': too few template arguments
+e:\css 343\assignment 4\ass4\ass4\customer.h(24): error C2061: syntax error: identifier 'Command'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2065: 'Command': undeclared identifier
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2059: syntax error: '>'
+e:\css 343\assignment 4\ass4\ass4\customer.h(37): error C2976: 'std::queue': too few template arguments
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.11.25503\include\queue(20): note: see declaration of 'std::queue'
 e:\css 343\assignment 4\ass4\ass4\borrow.cpp(17): error C2660: 'Customer::addCommand': function does not take 1 arguments
   ass4.cpp
-e:\css 343\assignment 4\ass4\ass4\command.h(26): error C2061: syntax error: identifier 'Customer'
-  Generating Code...
-  Compiling...
-  customer.cpp
   Generating Code...

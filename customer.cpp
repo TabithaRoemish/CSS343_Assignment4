@@ -88,3 +88,16 @@ void Customer::returnMovie(Movie* mv)
 	if (it != movieList.end())
 		movieList.erase(it);
 }
+
+void Customer::clearCommandHistory()
+{
+ //no mem alloc for queue so pop all members should not leak
+	while (!commandHistory.empty())
+		commandHistory.pop();
+
+}
+void Customer::clearMovieList()
+{
+	//no memalloc so clear should not result in mem leak
+	movieList.clear();
+}

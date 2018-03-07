@@ -12,6 +12,7 @@
 #include "command.h"
 
 
+
 class Customer
 {
 public:
@@ -27,9 +28,9 @@ public:
 	void returnMovie(Movie* mv);
 	
 	void printCommandHistory();
+	void clearCommandHistory();
+	void clearMovieList();
 	
-	//add clear commands,
-	// add clear movie list;
 private:
 	int CustomerID;
 	std::string CustomerName;
