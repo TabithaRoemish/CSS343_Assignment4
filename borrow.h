@@ -7,12 +7,9 @@
 #define BORROW_H
 #include "command.h"
 
-
-
 class Borrow : public Command
 {
 public:
-	//needs to check customer exists, media type is D, movie exists (use movie code to pull correct map, check map)
 	Borrow(Customer *custPtr, Movie* mvPtr); 
 	~Borrow() {};
 	virtual void print();

@@ -6,17 +6,13 @@
 #ifndef RETURN_H
 #define RETURN_H
 #include "command.h"
-#include "movie.h"
-#include "customer.h"
 
-class Movie;
-class Customer;
 
 class Return : public Command
 {
 public:
-	Return(Customer * custPtr, Movie * mvPtr);
-	~Return();
+	Return(Customer *custPtr, Movie* mvPtr);
+	~Return() {};
 	virtual void print();
 	virtual void execute();
 

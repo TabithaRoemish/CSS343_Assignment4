@@ -4,10 +4,9 @@
 //	File contains: Return class definition
 
 #include "return.h"
-#include "movie.h"
-#include "customer.h"
+#include <iostream>
 
-Return(Customer * cust, Movie * mv)
+Return::Return(Customer * cust, Movie * mv)
 {
 	mvPtr = mv;
 	custPtr = cust;
@@ -19,9 +18,9 @@ void Return::print()
 }
 void Return::execute()
 {
-	if (custPtr->movieRented(Movie* mv))
+	if (custPtr->movieRented(mvPtr))
 	{
-		custPtr->returnMovie(mv);
+		custPtr->returnMovie(mvPtr);
 		custPtr->addCommand(this);
 		//add 1 to movie stock mv->addStock();
 	}

@@ -40,7 +40,7 @@ void Store::readDVDMovies(std::string filename)
 			if (mvPtr != nullptr)
 			{
 				std::string code = input.substr(1, 1);
-				collection["D"][code][mvPtr->getKey()] = mvPtr;
+				/*collection["D"][code][mvPtr->getKey()] = mvPtr;*/
 			}
 		}
 	}
@@ -69,7 +69,7 @@ void Store::readCustomers(std::string filename)
 			ss << input;
 			ss >> custId >> custName;
 			Customer * cust = new Customer(custId, custName);
-			customerList.insert(custId, cust);
+			/*customerList.insert(custId, cust);*/
 		}
 	}
 	else
@@ -97,12 +97,12 @@ void Store::readCommands(std::string filename)
 void Store::printInventory()
 {
 
-	for (std::map<std::string, std::map<std::string, std::map<std::string, Movie*>>>
-		::iterator it = collection.begin(); it != collection.end(); it++)
-	{
-		std::cout << it->first;
-		std::cout << " ";
-		//need to finish this
-	}
+	//for (std::map<std::string, std::map<std::string, std::map<std::string, Movie*>>>
+	//	::iterator it = collection.begin(); it != collection.end(); it++)
+	//{
+	//	std::cout << it->first;
+	//	std::cout << " ";
+	//	//need to finish this
+	//}
 
 }

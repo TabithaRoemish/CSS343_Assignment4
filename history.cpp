@@ -5,10 +5,9 @@
 //		Child class of Command class. 
 
 #include "history.h"
-#include "customer.h"
+#include <iostream>
 
-
-History(Customer * cust)
+History::History(Customer * cust)
 {
 	custPtr = cust;
 }

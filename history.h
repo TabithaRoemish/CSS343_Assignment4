@@ -6,8 +6,7 @@
 #ifndef HISTORY_H
 #define HISTORY_H
 #include "command.h"
-#include <string>
-#include "customer.h"
+
 
 class History : public Command
 {
