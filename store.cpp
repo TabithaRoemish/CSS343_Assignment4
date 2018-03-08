@@ -7,16 +7,25 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
+#include "binarysearchtree.h"
 
+
+
+//initialize static variables in store
 std::set<std::string> Store::commandCodes = { "B", "R", "I", "H" };
 std::set<std::string> Store::mediaCodes = { "D" };
 std::set<std::string> Store::movieCodes = { "C", "D", "F" };
+HashMap Store::customerList;
+std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> Store::collection;
 
+//store destructor
 Store::~Store()
 {
-	//iterate through customer list, delete customers
-	//iterate through movie list, delete movies
+
 }
+
+//reads DVDs specifically because it adds all files to collection["D"]
+//reads input string and sends it to movie create function
 void Store::readDVDMovies(std::string filename)
 {
   /*F, 10, Nora Ephron, You've Got Mail, 1998       
@@ -40,7 +49,7 @@ void Store::readDVDMovies(std::string filename)
 			if (mvPtr != nullptr)
 			{
 				std::string code = input.substr(1, 1);
-				/*collection["D"][code][mvPtr->getKey()] = mvPtr;*/
+				collection["D"][code].add(mvPtr);
 			}
 		}
 	}
@@ -51,6 +60,7 @@ void Store::readDVDMovies(std::string filename)
 	
 }
 
+//reads customers from file, adds customers to hashtable
 void Store::readCustomers(std::string filename)
 {
 	//1111 Mouse Mickey 
@@ -69,7 +79,7 @@ void Store::readCustomers(std::string filename)
 			ss << input;
 			ss >> custId >> custName;
 			Customer * cust = new Customer(custId, custName);
-			/*customerList.insert(custId, cust);*/
+			customerList.insert(custId, cust);
 		}
 	}
 	else
@@ -77,6 +87,7 @@ void Store::readCustomers(std::string filename)
 	toRead.close();
 }
 
+//reads input string and sends it to command.create to make specific commands
 void Store::readCommands(std::string filename)
 {
 	std::ifstream toRead(filename);
@@ -93,16 +104,29 @@ void Store::readCommands(std::string filename)
 	toRead.close();
 }
 
-
+//iterates through collection
+//prints string value for mediaType, then string value for Genre type
+//then prints contents of BST
+//ex
+// D:  
+//   C:  
+//	   Title Year
+//	   Title Year
 void Store::printInventory()
 {
-
-	//for (std::map<std::string, std::map<std::string, std::map<std::string, Movie*>>>
-	//	::iterator it = collection.begin(); it != collection.end(); it++)
-	//{
-	//	std::cout << it->first;
-	//	std::cout << " ";
-	//	//need to finish this
-	//}
-
+	for (std::map<std::string, std::map<std::string, BinarySearchTree<Movie*>>>
+		::iterator mediaTypeIt = collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
+	{
+		std::cout << mediaTypeIt->first << ": " << endl;
+		auto genreIt = mediaTypeIt->second.begin();
+		for (genreIt; genreIt != mediaTypeIt->second.end(); genreIt++)
+		{
+			std::cout << "   " << genreIt->first << ": " << endl;
+			genreIt->second.print();
+		}
+	}
 }
+
+
+
+

@@ -11,6 +11,8 @@
 #include <set>
 #include "customer.h"
 #include "hashtable.h"
+#include "binarysearchtree.h"
+
 class HashMap;
 class Store
 {
@@ -26,8 +28,8 @@ public:
 	static void printInventory();
 
 private:
-	/*static std::map< std::string, std::map<std::string, std::map<std::string, Movie*>>> collection; */
-	/*static HashMap customerList;*/
+	static std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> collection;
+	static HashMap customerList;
 	static std::set<std::string> commandCodes;
 	static std::set<std::string> mediaCodes;
 	static std::set<std::string> movieCodes;

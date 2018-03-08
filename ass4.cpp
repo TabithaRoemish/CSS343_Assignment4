@@ -7,6 +7,8 @@
 #include "store.h"
 using namespace std;
 
+#include "binarysearchtree.h"
+
 int main()
 {
 	Store st;
@@ -14,7 +16,8 @@ int main()
 	st.readCustomers("data4customers.txt");
 	st.readCommands("data4commands.txt");*/
 
-
+	BinarySearchTree<string> bst1;
 
 	return 0;
 }
+
