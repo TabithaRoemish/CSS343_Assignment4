@@ -96,8 +96,7 @@ void Store::readCommands(std::string filename)
 	if (toRead.is_open())
 	{
 		while (std::getline(toRead, input))
-			/*Command * cmd = Command::create(input);*/
-			;
+			Command * cmd = Command::create(input);
 	}
 	else
 		std::cerr << "Could not open file: " << filename;

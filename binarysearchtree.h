@@ -17,7 +17,7 @@
 
 #ifndef BINARYSEARCHTREE_H
 #define BINARYSEARCHTREE_H
-
+#include "movie.h" // required for rental store custom functions
 #include "binarynode.h"
 #include<algorithm>
 
@@ -59,8 +59,6 @@ public:
     void rebalance();
     // delete all nodes in tree and set root to nullptr
     void clear();
-	//print tree inorder w/passing function as parameter
-	void print();
     // given an array of length n
     // create this tree to have all items in that array
     // with the minimum height
@@ -70,18 +68,36 @@ public:
     bool operator==(const BinarySearchTree<ItemType> &) const;
     // not == to each other
     bool operator!=(const BinarySearchTree<ItemType> &) const;
+
+	//custom methods for use in Rental Store
+
+	//print tree inorder w/passing function as parameter
+	void print();
+	//find item given string value, 
+	// requires ItemType to have method getKey() that returns string
+	bool findWithString(std::string itemKey);
+
+	// return item given string value, 
+	//requres ItemType have getKey() method that returns string
+	ItemType returnItemWithString(std::string itemKey);
+
 private:
     // root of the tree
     BinaryNode<ItemType>* rootPtr {nullptr};
     // add a new node, helper function for add
-    BinaryNode<ItemType>* placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr);
+    BinaryNode<ItemType>* placeNode(BinaryNode<ItemType>* subTreePtr, 
+		BinaryNode<ItemType>* newNodePtr);
     // find the node with given vale, helper function for contains
-    BinaryNode<ItemType>* findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const;
+    BinaryNode<ItemType>* findNode(BinaryNode<ItemType>* subTreePtr, 
+		const ItemType& target) const;
     // helper function for displaySideways to work recursively
     void sideways(BinaryNode<ItemType>* current, int level) const;
 
 	// other functions....
 	void printHelper(BinaryNode<ItemType>* current);
+	ItemType returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr, 
+		std::string itemKey);
+	bool findWithStringHelper(BinaryNode<ItemType>* subTreePtr, std::string itemKey);
 	void deleteTree(BinaryNode<ItemType>* current);
 	int getHeightHelper(BinaryNode<ItemType> * current) const;
 	int getNodeCountHelper(BinaryNode<ItemType> * current) const;
@@ -241,6 +257,49 @@ void BinarySearchTree<ItemType>::printHelper(BinaryNode<ItemType>* current)
 		printHelper(current->getRightChildPtr());
 	}
 }
+
+template<class ItemType>
+ItemType BinarySearchTree<ItemType>
+::returnItemWithString(std::string itemKey)
+{
+	ItemType mv = returnItemWithStringHelper(rootPtr, itemKey);
+	return mv;
+}
+
+template<class ItemType>
+ItemType BinarySearchTree<ItemType>::
+	returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr,
+		std::string itemKey)
+{
+	if (subTreePtr->getItem()->getKey() == itemKey)
+		return subTreePtr->getItem();
+	//check left
+	else if (itemKey < subTreePtr->getItem()->getKey())
+		if (subTreePtr->getLeftChildPtr() == nullptr)
+			return nullptr;
+		else
+			return returnItemWithStringHelper(subTreePtr->getLeftChildPtr(), itemKey);
+	//check right
+	else if (itemKey > subTreePtr->getItem()->getKey())
+		if (subTreePtr->getRightChildPtr() == nullptr)
+			return nullptr;
+		else
+			return returnItemWithStringHelper(subTreePtr->getRightChildPtr(), itemKey);
+	else
+		return nullptr;
+}
+
+template<class ItemType>
+bool BinarySearchTree<ItemType>::findWithString(std::string itemKey)
+{
+	ItemType temp = returnItemWithStringHelper(rootPtr, itemKey);
+	if (temp == nullptr)
+		return false;
+	else
+		return true;
+}
+
+
 
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance() {
