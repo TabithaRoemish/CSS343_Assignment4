@@ -101,3 +101,9 @@ void Customer::clearMovieList()
 	//no memalloc so clear should not result in mem leak
 	movieList.clear();
 }
+
+std::ostream&  operator<<(std::ostream& out, const Customer & cust)
+{
+	out << cust.CustomerID  << cust.CustomerName;
+	return out;
+}

@@ -14,13 +14,22 @@ HashMap::HashMap()
 }
 HashMap::~HashMap()
 {
+	clear();
+}
+
+void HashMap::clear()
+{
 	for (int i = 0; i < TABLE_SIZE; i++)
 	{
 		if (table[i] != nullptr)
+		{
+			delete table[i]->customer; // release customer space
 			delete table[i];
+		}
 	}
-	delete table;
+	delete[] table;
 }
+
 int HashMap::HashFunction(int key)
 {
 	return key % TABLE_SIZE;
@@ -44,6 +53,15 @@ Customer * HashMap::search(int key)
 		return nullptr;
 	else
 		return table[hash]->customer;
+}
+
+void HashMap::print()
+{
+	for (int i = 0; i < TABLE_SIZE; i++)
+	{
+		if (table[i] != nullptr)
+			std::cout << *table[i]->customer << std::endl;
+	}
 }
 
 void HashMap::remove(int key)

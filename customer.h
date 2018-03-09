@@ -8,6 +8,7 @@
 #include <string>
 #include <vector>
 #include <queue>
+#include <iostream>
 #include "movie.h"
 #include "command.h"
 
@@ -31,6 +32,7 @@ public:
 	void clearCommandHistory();
 	void clearMovieList();
 	
+	friend std::ostream& operator<<(std::ostream& out, const Customer & cust);
 private:
 	int CustomerID;
 	std::string CustomerName;

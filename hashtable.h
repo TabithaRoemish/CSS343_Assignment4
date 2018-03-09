@@ -15,7 +15,7 @@ public:
 	int key;
 	Customer * customer;
 	HashElement(int ky, Customer* cust) {
-		ky = key;
+		key = ky;
 		customer = cust;
 	}
 
@@ -30,6 +30,8 @@ public:
 	void insert(int key, Customer * custPtr);
 	Customer * search(int key);
 	void remove(int key);
+	void print();
+	void clear();
 
 private:
 	HashElement **table;

@@ -21,7 +21,7 @@ std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> Store::c
 //store destructor
 Store::~Store()
 {
-
+	//hashmap customerList releases space made for hash elements and Customers
 }
 
 //reads DVDs specifically because it adds all files to collection["D"]
@@ -77,10 +77,21 @@ void Store::readCustomers(std::string filename)
 		{
 
 			ss << input;
-			ss >> custId >> custName;
-			Customer * cust = new Customer(custId, custName);
-			customerList.insert(custId, cust);
+			ss >> custId;
+			std::getline(ss,custName);
+		//check if customer is in list, if not (nullptr returned) then add
+			if (customerList.search(custId) == nullptr) 
+			{
+				Customer * cust = nullptr;
+				cust = new Customer(custId, custName);
+				customerList.insert(custId, cust);
+				input = "";
+				custId = 0;
+				custName = "";
+				ss.clear();
+			}//else continue without comment
 		}
+		customerList.print(); // used for testing
 	}
 	else
 		std::cerr << "Could not open file: " << filename;

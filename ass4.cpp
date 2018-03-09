@@ -12,8 +12,9 @@ using namespace std;
 int main()
 {
 	Store st;
-	/*st.readMovies("data4movies.txt");
 	st.readCustomers("data4customers.txt");
+
+	/*st.readMovies("data4movies.txt");
 	st.readCommands("data4commands.txt");*/
 
 	BinarySearchTree<string> bst1;
