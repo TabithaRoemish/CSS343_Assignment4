@@ -62,11 +62,15 @@ Movie* Movie::create(std::string identifier)
             std::string s = identifier;
             std::stringstream ss(identifier);
             int stock = 0;
-            ss >> stock;
-            std::string director = "";
-            std::getline(ss, director, ',');
-            std::string title = "";
-            std::getline(ss, title, ',');
+			std::string junk = "";
+			std::getline(ss, junk, ' ');
+			ss >> stock;
+			std::getline(ss, junk, ' ');
+			std::string director = "";
+			std::getline(ss, director, ',');
+			std::string title = "";
+			std::getline(ss, title, ',');
+			std::getline(ss, junk, ' ');
             int year = 0;
             ss >> year;
             
@@ -83,14 +87,18 @@ Movie* Movie::create(std::string identifier)
             
             std::string s = identifier;
             std::stringstream ss(identifier);
-            int stock = 0;
-            ss >> stock;
-            std::string director = "";
-            std::getline(ss, director, ',');
-            std::string title = "";
-            std::getline(ss, title, ',');
-            int year = 0;
-            ss >> year;
+			int stock = 0;
+			std::string junk = "";
+			std::getline(ss, junk, ' ');
+			ss >> stock;
+			std::getline(ss, junk, ' ');
+			std::string director = "";
+			std::getline(ss, director, ',');
+			std::string title = "";
+			std::getline(ss, title, ',');
+			std::getline(ss, junk, ' ');
+			int year = 0;
+			ss >> year;
             
             mov = new Comedy(stock, director, title, year);
             break;

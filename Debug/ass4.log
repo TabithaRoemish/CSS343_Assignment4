@@ -1,2 +1,14 @@
-﻿  movie.cpp
-e:\css 343\assignment 4\ass4\ass4\movie.cpp : fatal error C1041: cannot open program database 'E:\CSS 343\Assignment 4\ass4\ass4\Debug\vc141.pdb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+﻿  store.cpp
+  Generating Code...
+  Compiling...
+  return.cpp
+  inventory.cpp
+  history.cpp
+  hashtable.cpp
+  customer.cpp
+  command.cpp
+  borrow.cpp
+  ass4.cpp
+  Generating Code...
+  ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.exe
+  ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.pdb (Partial PDB)

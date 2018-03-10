@@ -42,7 +42,7 @@ Command * Command::create(std::string identifier)
 		return make(actionCode, nullptr, nullptr);
 
 	//check command code exists
-	if (Store::commandCodes.count(identifier.substr(1, 1)) == 1)
+	if (Store::commandCodes.count(identifier.substr(0, 1)) == 1)
 	{
 		ss >> custNum; // check customer exists
 		Customer * customer = Store::customerList.search(custNum);

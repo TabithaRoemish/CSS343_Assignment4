@@ -154,11 +154,11 @@ int BinarySearchTree<ItemType>::getNumberOfNodes() const {
 template<class ItemType>
 bool BinarySearchTree<ItemType>::add(const ItemType& item) {
 
-	if (insertCount == 3)
-	{
-		rebalance();
-		insertCount = 0;
-	}
+	//if (insertCount == 5)
+	//{
+	//	rebalance();
+	//	insertCount = 0;
+	//}
 
 	if (rootPtr == nullptr)
 		rootPtr = new BinaryNode<ItemType>(item);
@@ -192,7 +192,7 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const {
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::
 placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
-	if (newNodePtr->getItem()> subTreePtr->getItem())
+	if (*newNodePtr->getItem()> *subTreePtr->getItem())
 	{
 		if (subTreePtr->getRightChildPtr() == nullptr)
 			subTreePtr->setRightChildPtr(newNodePtr);
@@ -200,14 +200,14 @@ placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
 			placeNode(subTreePtr->getRightChildPtr(), newNodePtr);
 	}
 	//check left
-	if (newNodePtr->getItem() < subTreePtr->getItem())
+	if (*subTreePtr->getItem() > *newNodePtr->getItem())
 	{
 		if (subTreePtr->getLeftChildPtr() == nullptr)
 			subTreePtr->setLeftChildPtr(newNodePtr);
 		else
 			placeNode(subTreePtr->getLeftChildPtr(), newNodePtr);
 	}
-	if (newNodePtr->getItem() == subTreePtr->getItem())
+	if (*newNodePtr->getItem() == *subTreePtr->getItem())
 		return nullptr;
 
 	return subTreePtr;

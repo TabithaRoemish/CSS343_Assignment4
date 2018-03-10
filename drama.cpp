@@ -20,7 +20,7 @@ void Drama::print()
     // D, 10, Steven Spielberg, Schindler's List, 1993
     // print out the movie type, stock, director, title, and
     // release year
-    std::cout << "F, " << this->stock << ", " << this->director << ", " <<
+    std::cout << "D, " << this->stock << ", " << this->director << ", " <<
     this->title << ", " << this->releaseYear << std::endl;
 }
 				  

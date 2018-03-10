@@ -53,7 +53,7 @@ bool Classic::operator==(Classic & cl)
 bool Classic::operator>(Movie & mv)
 {
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
-	return this > ptr;
+	return ptr > this;
 }
 
 bool Classic::operator==(Movie & mv)

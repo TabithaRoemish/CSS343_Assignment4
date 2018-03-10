@@ -44,13 +44,12 @@ void Store::readDVDMovies(std::string filename)
 	if (toRead.is_open())
 
 	{
-		std::getline(toRead, input);
 		while (std::getline(toRead, input))
 		{
 			Movie * mvPtr = Movie::create(input);
 			if (mvPtr != nullptr)
 			{
-				std::string code = input.substr(1, 1);
+				std::string code = input.substr(0, 1);
 				collection["D"][code].add(mvPtr);
 			}
 			input = "";
