@@ -12,13 +12,15 @@
 class Movie
 {
 public:
-	virtual void print() = 0;
+	Movie() {};
 	virtual ~Movie() {};
-	static Movie * create(std::string identifier); //return nullptr if error in string
+	//static Movie * create(std::string identifier); //return nullptr if error in string
+
+	virtual void print() = 0;
 	virtual bool operator>(Movie & mv) = 0;
 	virtual bool operator==(Movie & mv) = 0;
 	virtual std::string  getKey() = 0;
-	std::vector<char> videoCode{ 'F', 'C', 'D' }; // hardcoded, need to update if new genres added
+
 };
 
 //ex file)

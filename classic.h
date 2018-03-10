@@ -20,6 +20,10 @@ public:
 	//sort by Release date then major actor
 	virtual bool operator>(Classic & cm);
 	virtual bool operator==(Classic & cm);
+	virtual std::string getkey();
+
+	virtual bool operator>(Movie & mv);
+	virtual bool operator==(Movie & mv);
 
 private:
 	int stock;

@@ -48,3 +48,20 @@ bool Classic::operator==(Classic & cl)
     else
         return false;
 }
+
+bool Classic::operator>(Movie & mv)
+{
+	Classic * ptr = dynamic_cast<Classic*>(&mv);
+	return this > ptr;
+}
+
+bool Classic::operator==(Movie & mv)
+{
+	Classic * ptr = dynamic_cast<Classic*>(&mv);
+	return this == ptr;
+}
+
+std::string Classic::getkey()
+{
+	return key;
+}

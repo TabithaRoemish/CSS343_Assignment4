@@ -57,6 +57,9 @@
     <ClCompile Include="binarysearchtree.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="movie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="movie.h">

@@ -14,10 +14,9 @@ int main()
 	Store st;
 	st.readCustomers("data4customers.txt");
 
-	/*st.readMovies("data4movies.txt");
-	st.readCommands("data4commands.txt");*/
+	st.readDVDMovies("data4movies.txt");
+	//st.readCommands("data4commands.txt");
 
-	BinarySearchTree<string> bst1;
 
 	return 0;
 }

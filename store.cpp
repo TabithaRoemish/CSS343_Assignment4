@@ -9,7 +9,9 @@
 #include <sstream>
 #include "binarysearchtree.h"
 
-
+#include "comedy.h"
+#include "classic.h"
+#include "drama.h"
 
 //initialize static variables in store
 std::set<std::string> Store::commandCodes = { "B", "R", "I", "H" };
@@ -35,28 +37,41 @@ void Store::readDVDMovies(std::string filename)
 	Z, 10, Hal Ashby, Harold and Maude, Ruth Gordon 2 1971       
 	D, 10, Phillippe De Broca, King of Hearts, 1967*/
 
-	std::ifstream toRead(filename);
+	//std::ifstream toRead(filename);
 
-	std::string input;
+	//std::string input;
 
-	if (toRead.is_open())
+	//if (toRead.is_open())
 
-	{
-		std::getline(toRead, input);
-		while (std::getline(toRead, input))
-		{
-			Movie * mvPtr = nullptr; //Movie::create(input);
-			if (mvPtr != nullptr)
-			{
-				std::string code = input.substr(1, 1);
-				collection["D"][code].add(mvPtr);
-			}
-		}
-	}
-	else
-		std::cerr << "Could not open file: " << filename;
+	//{
+	//	std::getline(toRead, input);
+	//	while (std::getline(toRead, input))
+	//	{
+	//		Movie * mvPtr = nullptr; //Movie::create(input);
+	//		if (mvPtr != nullptr)
+	//		{
+	//			std::string code = input.substr(1, 1);
+	//			collection["D"][code].add(mvPtr);
+	//		}
+	//	}
+	//}
+	//else
+	//	std::cerr << "Could not open file: " << filename;
 
-	toRead.close();
+	//toRead.close();
+
+	Comedy mv1(10, "Nora Ephron", "You've Got Mail", 1998);
+	Drama mv2(10, "Seven Spielberg", "Schindler's List", 1993);
+	Classic mv3(10, "George Cukkor", "Holiday", "Katherince Hepburn", 9, 1938);
+
+	Movie * com = &mv1;
+	Movie * dram = &mv2;
+	Movie * clas = &mv3;
+
+	collection["D"]["F"].add(com);
+	collection["D"]["D"].add(dram);
+	collection["D"]["C"].add(clas);
+	
 	
 }
 

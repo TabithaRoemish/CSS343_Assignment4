@@ -41,3 +41,20 @@ bool Drama::operator==(Drama & dm)
     else
         return false;
 }
+
+bool Drama::operator>(Movie & mv)
+{
+	Drama * ptr = dynamic_cast<Drama*>(&mv);
+	return this > ptr;
+}
+
+bool Drama::operator==(Movie & mv)
+{
+	Drama * ptr = dynamic_cast<Drama*>(&mv);
+	return this == ptr;
+}
+
+std::string Drama::getKey()
+{
+	return key;
+}

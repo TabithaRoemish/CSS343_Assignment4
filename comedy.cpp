@@ -6,7 +6,7 @@
 #include "comedy.h"
 #include <iostream>
 
-Comedy::Comedy(int stock, std::string director, std::string title, std::string actor, int year)
+Comedy::Comedy(int stock, std::string director, std::string title, int year)
 {
     this->stock = stock;
     this->director = director;
@@ -45,4 +45,21 @@ bool Comedy::operator==(Comedy & cm)
     else{
         return false;
     }
+}
+
+bool Comedy::operator>(Movie & mv)
+{
+	Comedy * ptr = dynamic_cast<Comedy*>(&mv);
+	return this > ptr;
+}
+
+bool Comedy::operator==(Movie & mv)
+{
+	Comedy * ptr = dynamic_cast<Comedy*>(&mv);
+	return this == ptr;
+}
+
+std::string Comedy::getKey()
+{
+	return key;
 }
