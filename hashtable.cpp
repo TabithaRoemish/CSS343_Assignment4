@@ -32,7 +32,8 @@ void HashMap::clear()
 
 int HashMap::HashFunction(int key)
 {
-	return key % TABLE_SIZE;
+	int modNumber = TABLE_SIZE - 1;
+	return key % modNumber;
 }
 void HashMap::insert(int key, Customer * custPtr)
 {

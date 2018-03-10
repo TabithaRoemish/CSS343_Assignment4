@@ -13,9 +13,8 @@ int main()
 {
 	Store st;
 	st.readCustomers("data4customers.txt");
-
 	st.readDVDMovies("data4movies.txt");
-	//st.readCommands("data4commands.txt");
+	st.readCommands("data4commands.txt");
 
 
 	return 0;
