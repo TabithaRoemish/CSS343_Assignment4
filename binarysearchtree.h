@@ -253,7 +253,9 @@ void BinarySearchTree<ItemType>::printHelper(BinaryNode<ItemType>* current)
 	if (current != nullptr)
 	{
 		printHelper(current->getLeftChildPtr());
-		std::cout << "      " << *current << std::endl;
+		std::cout << "      ";
+		current->getItem()->print();
+		std::cout << std::endl;
 		printHelper(current->getRightChildPtr());
 	}
 }

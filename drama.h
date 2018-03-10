@@ -12,7 +12,7 @@ class Drama : public Movie
 {
 public:
 	// store movie in map<std::string titleDirector, movie *> D
-	Drama(int stock, std::string director, std::string title, std::string actor, int year);
+	Drama(int stock, std::string director, std::string title, int year);
 	virtual ~Drama() {};
 	virtual void print(); // D, 10, Steven Spielberg, Schindler's List, 1993
 	

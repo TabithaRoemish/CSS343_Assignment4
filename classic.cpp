@@ -11,6 +11,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
     this->stock = stock;
     this->director = director;
     this->title = title;
+	this->actor = actor;
     this->releaseMonth = month;
     this->releaseYear = year;
     this->key = title + std::to_string (year);
@@ -22,7 +23,7 @@ void Classic::print()
     // print out the movie type, stock, director, title, major
     // actor, release month, and release year
     std::cout << "C, " << this->stock << ", " << this->director << ", " <<
-    this->title << ", " << this->actor << ", " << this->releaseMonth
+    this->title << ", " << this->actor << ", " << this->releaseMonth << " "
     << this->releaseYear << std::endl;
 }
 
@@ -61,7 +62,7 @@ bool Classic::operator==(Movie & mv)
 	return this == ptr;
 }
 
-std::string Classic::getkey()
+std::string Classic::getKey()
 {
 	return key;
 }

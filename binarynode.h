@@ -24,7 +24,7 @@ class BinaryNode {
 	// Has to be defined in .h and not in cpp since it is not in
 	// BinaryNode<ItemType>:: class
 	friend std::ostream& operator<<(std::ostream& out, const BinaryNode<ItemType>& bn) {
-		out << "[BN: " << bn.item << "]";
+		out << "bn.item->";
 		return out;
 	}
 public:

@@ -1,11 +1,2 @@
-﻿  store.cpp
-g:\css 343\assignment 4\ass4\ass4\store.cpp(63): error C2259: 'Comedy': cannot instantiate abstract class
-  g:\css 343\assignment 4\ass4\ass4\store.cpp(63): note: due to following members:
-  g:\css 343\assignment 4\ass4\ass4\store.cpp(63): note: 'bool Movie::operator >(Movie &)': is abstract
-  g:\css 343\assignment 4\ass4\ass4\movie.h(18): note: see declaration of 'Movie::operator >'
-  g:\css 343\assignment 4\ass4\ass4\store.cpp(63): note: 'bool Movie::operator ==(Movie &)': is abstract
-  g:\css 343\assignment 4\ass4\ass4\movie.h(19): note: see declaration of 'Movie::operator =='
-  g:\css 343\assignment 4\ass4\ass4\store.cpp(63): note: 'std::string Movie::getKey(void)': is abstract
-  g:\css 343\assignment 4\ass4\ass4\movie.h(20): note: see declaration of 'Movie::getKey'
-  comedy.cpp
-  Generating Code...
+﻿  classic.cpp
+  ass4.vcxproj -> G:\CSS 343\Assignment 4\ass4\Debug\ass4.exe

@@ -6,7 +6,7 @@
 #include "drama.h"
 #include <iostream>
 
-Drama::Drama(int stock, std::string director, std::string title, std::string actor, int year)
+Drama::Drama(int stock, std::string director, std::string title, int year)
 {
     this->stock = stock;
     this->director = director;

@@ -62,7 +62,7 @@ void Store::readDVDMovies(std::string filename)
 
 	Comedy mv1(10, "Nora Ephron", "You've Got Mail", 1998);
 	Drama mv2(10, "Seven Spielberg", "Schindler's List", 1993);
-	Classic mv3(10, "George Cukkor", "Holiday", "Katherince Hepburn", 9, 1938);
+	Classic mv3(10, "George Cukkor", "Holiday", "Katherine Hepburn", 9, 1938);
 
 	Movie * com = &mv1;
 	Movie * dram = &mv2;
@@ -71,6 +71,8 @@ void Store::readDVDMovies(std::string filename)
 	collection["D"]["F"].add(com);
 	collection["D"]["D"].add(dram);
 	collection["D"]["C"].add(clas);
+
+	printInventory();
 	
 	
 }
