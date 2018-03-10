@@ -14,5 +14,5 @@ void Inventory::print()
 }
 void Inventory::execute()
 {
-	
+	Store::printInventory();
 }
