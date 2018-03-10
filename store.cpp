@@ -39,7 +39,7 @@ void Store::readDVDMovies(std::string filename)
 
 	//std::ifstream toRead(filename);
 
-	//std::string input;
+	//std::string input = "";
 
 	//if (toRead.is_open())
 
@@ -47,12 +47,13 @@ void Store::readDVDMovies(std::string filename)
 	//	std::getline(toRead, input);
 	//	while (std::getline(toRead, input))
 	//	{
-	//		Movie * mvPtr = nullptr; //Movie::create(input);
+	//		Movie * mvPtr = Movie::create(input);
 	//		if (mvPtr != nullptr)
 	//		{
 	//			std::string code = input.substr(1, 1);
 	//			collection["D"][code].add(mvPtr);
 	//		}
+	//		input = "";
 	//	}
 	//}
 	//else
@@ -125,6 +126,7 @@ void Store::readCommands(std::string filename)
 	{
 		while (std::getline(toRead, input))
 			Command * cmd = Command::create(input);
+		input = "";
 	}
 	else
 		std::cerr << "Could not open file: " << filename;

@@ -14,7 +14,7 @@ class Movie
 public:
 	Movie() {};
 	virtual ~Movie() {};
-	//static Movie * create(std::string identifier); //return nullptr if error in string
+	static Movie * create(std::string identifier); //return nullptr if error in string
 
 	virtual void print() = 0;
 	virtual bool operator>(Movie & mv) = 0;

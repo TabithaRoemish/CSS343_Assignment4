@@ -129,10 +129,12 @@ Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 	case 'I':
 	{
 		cmd = new Inventory();
+		break;
 	}
 	case 'H':
 	{
 		cmd = new History(cust);
+		break;
 	}
 	default : 
 		std::cerr << "Invalid Action Code" << std::endl;
