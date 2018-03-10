@@ -1,3 +1,33 @@
+
+Assignment4 : Movie Rental Store Description
+
+This rental store uses the following classes: 
+ 
+  > Store - This holds the readDataFile functions which "run" the store. Store also contains the customer list and movie list. 
+  
+  > Movie - This is an abstract class and virtual inheritance is used for each of the child classes below
+       
+     Comedy
+     Drama
+     Classic
+     
+ > Command - This is an abstract class and virtual inheritance is used for each of the child classes below. 
+  
+     Borrow
+     Return
+     Inventory
+     History
+     
+ > BinarySearch Tree & Binarynode - these classes are used for storing the movie objects
+  
+ > HashMap - this class is used for storing the customer list
+
+Main consists of the three datafileread functions. There is no input required.
+
+Here is the g++ compile command: g++ -std=c++14 -g -Wall -Wextra binarynode.cpp binarysearchtree.cpp borrow.cpp classic.cpp command.cpp customer.cpp drama.cpp hashtable.cpp history.cpp inventory.cpp return.cpp store.cpp ass4.cpp -o ass4
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+Assignment Guidelines
 # CSS343_Assignment4.cpp
 Movie Rental Store
 Assignment 4 
