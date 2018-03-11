@@ -1,5 +1,5 @@
 //	File Name: ass4.cpp
-//	Programmer: Tabitha Roemish
+//	Programmer: Tabitha Roemish, Prathyusha Pillari 
 //	Date: February 23, 2018
 //	File contains: Movie class declaration
 //		movie class is abstract class for movie types (Comedy[F], Drama[D], Classic[C])
