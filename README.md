@@ -24,7 +24,7 @@ This rental store uses the following classes:
 
 Main consists of the three datafileread functions. There is no input required.
 
-Here is the g++ compile command: g++ -std=c++14 -g -Wall -Wextra binarynode.cpp binarysearchtree.cpp borrow.cpp classic.cpp command.cpp customer.cpp drama.cpp hashtable.cpp history.cpp inventory.cpp movie.cpp return.cpp store.cpp ass4.cpp -o ass4
+Here is the g++ compile command: g++ -std=c++14 -g -Wall -Wextra binarynode.cpp binarysearchtree.cpp command.cpp borrow.cpp history.cpp inventory.cpp return.cpp movie.cpp classic.cpp comedy.cpp drama.cpp hashtable.cpp customer.cpp store.cpp ass4.cpp -o ass4
 
 \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
 Assignment Guidelines
