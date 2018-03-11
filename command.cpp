@@ -2,6 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 4, 2018
 //	File contains: command abstract class definitions
+//      Parent class to Borrow, Return, Inventory & History classes. 
+//      This is an abstract class where the child classes must implement the methods within it. 
 
 #include "command.h"
 #include "borrow.h"
@@ -19,8 +21,7 @@
 //S 
 //H 1234
 
-
-
+// create command
 Command * Command::create(std::string identifier)
 {
 	int custNum = 0; 
@@ -112,27 +113,34 @@ Command * Command::create(std::string identifier)
 	return cmd;
 }
 
+// make method
 Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 {
+	// command obbject pointer to return
 	Command * cmd = nullptr;
+	// switch statement to see the type of command
 	switch (actionType) {
 	case 'B':
 	{
+		// creates obbject
 		cmd = new Borrow(cust, mv);
 		break;
 	}
 	case 'R':
 	{
+		// creates obbject
 		cmd = new Return(cust, mv);
 		break;
 	}
 	case 'I':
-	{
+	{	
+		// creates obbject
 		cmd = new Inventory();
 		break;
 	}
 	case 'H':
 	{
+		// creates obbject
 		cmd = new History(cust);
 		break;
 	}
@@ -140,6 +148,7 @@ Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 		std::cerr << "Invalid Action Code" << std::endl;
 	}
 
+	// returns the command object
 	return cmd;
 }
 
