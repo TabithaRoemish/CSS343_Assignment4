@@ -13,6 +13,7 @@ Drama::Drama(int stock, std::string director, std::string title, int year)
     this->title = title;
     this->releaseYear = year;
     this->key = director + title;
+	this->genre = "Drama";
 }
 
 void Drama::print()
@@ -78,4 +79,17 @@ void Drama::brwMovie()
 void Drama::rtnMovie()
 {
 	stock++;
+}
+
+std::string Drama::getTitle() const
+{
+	return title;
+}
+std::string Drama::getGenre() const
+{
+	return genre;
+}
+std::string Drama::getDirector() const
+{
+	return director;
 }

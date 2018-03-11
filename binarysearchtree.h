@@ -276,20 +276,29 @@ ItemType BinarySearchTree<ItemType>::
 	returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr,
 		std::string itemKey)
 {
+	std::cout << "find with string test: " << std::endl;
+	std::cout << "Current Key: " << subTreePtr->getItem()->getKey() << std::endl;
+	std::cout << " Search Key: " << itemKey << endl;
 	if (subTreePtr->getItem()->getKey() == itemKey)
 		return subTreePtr->getItem();
 	//check left
 	else if (itemKey < subTreePtr->getItem()->getKey())
+	{
+		std::cout << "Check Left" << std::endl;
 		if (subTreePtr->getLeftChildPtr() == nullptr)
 			return nullptr;
 		else
 			return returnItemWithStringHelper(subTreePtr->getLeftChildPtr(), itemKey);
+	}
 	//check right
 	else if (itemKey > subTreePtr->getItem()->getKey())
+	{
+		std::cout << "Check Right" << std::endl;
 		if (subTreePtr->getRightChildPtr() == nullptr)
 			return nullptr;
 		else
 			return returnItemWithStringHelper(subTreePtr->getRightChildPtr(), itemKey);
+	}
 	else
 		return nullptr;
 }

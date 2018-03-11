@@ -21,6 +21,9 @@ public:
 	virtual bool operator==(Drama & dm);
 	virtual std::string  getKey() const;
 	virtual int getStock() const;
+	virtual std::string getTitle() const;
+	virtual std::string getGenre() const;
+	virtual std::string getDirector() const;
 	virtual void brwMovie();
 	virtual void rtnMovie();
 
@@ -34,6 +37,7 @@ private:
 	std::string title;
 	int releaseYear;
 	std::string key; //Title + year to store in BST and we can check key match rather than check random properties
+	std::string genre;
 };
 
 #endif

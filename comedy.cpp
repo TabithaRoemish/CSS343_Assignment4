@@ -13,6 +13,7 @@ Comedy::Comedy(int stock, std::string director, std::string title, int year)
     this->title = title;
     this->releaseYear = year;
     this->key = title + std::to_string (year);
+	this->genre = "Comedy";
 }
 
 void Comedy::print()
@@ -81,4 +82,17 @@ void Comedy::brwMovie()
 void Comedy::rtnMovie()
 {
 	stock++;
+}
+
+std::string Comedy::getTitle() const
+{
+	return title;
+}
+std::string Comedy::getGenre() const
+{
+	return genre;
+}
+std::string Comedy::getDirector() const
+{
+	return director;
 }

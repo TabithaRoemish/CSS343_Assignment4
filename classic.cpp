@@ -15,6 +15,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
     this->releaseMonth = month;
     this->releaseYear = year;
     this->key = std::to_string (year) + actor;
+	this->genre = "Classic";
 }
 
 void Classic::print()
@@ -22,7 +23,7 @@ void Classic::print()
     //C, 10, George Cukor, Holiday, Cary Grant 9 1938
     // print out the movie type, stock, director, title, major
     // actor, release month, and release year
-    std::cout << "C, " << this->stock << ", " << this->director << ", " <<
+	std::cout << "C, " << this->stock << ", " << this->director << ", " <<
     this->title << ", " << this->actor << ", " << this->releaseMonth << " "
     << this->releaseYear << std::endl;
 }
@@ -89,4 +90,17 @@ void Classic::brwMovie()
 void Classic::rtnMovie()
 {
 	stock++;
+}
+
+std::string Classic::getTitle() const
+{
+	return title;
+}
+std::string Classic::getGenre() const
+{
+	return genre;
+}
+std::string Classic::getDirector() const
+{
+	return director;
 }

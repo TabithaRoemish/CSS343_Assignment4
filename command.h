@@ -23,7 +23,7 @@ public:
 	virtual void print() = 0;
 	virtual void execute() = 0;
 	static Command * create(std::string identifier);
-
+	static bool isMovie(std::string media, std::string movC, std::string key);
 private:
 	static Command * make(char actionType, Customer * cust, Movie * mv);
 };

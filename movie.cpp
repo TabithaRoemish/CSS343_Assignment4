@@ -33,6 +33,7 @@ Movie* Movie::create(std::string identifier)
 			std::getline(ss, junk, ' ');
             std::string director = "";
             std::getline(ss, director, ',');
+			ss.get(); //get space before title
             std::string title = "";
             std::getline(ss, title, ',');
 			std::getline(ss, junk, ' ');

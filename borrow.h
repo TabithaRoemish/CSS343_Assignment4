@@ -18,6 +18,7 @@ public:
 private:
 	Movie * mvPtr;
 	Customer * custPtr;
+	int tempStock; // to capture stock at time of borrow
 };
 
 #endif

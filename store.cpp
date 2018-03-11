@@ -157,6 +157,7 @@ void Store::readCommands(std::string filename)
 //	   Title Year
 void Store::printInventory()
 {
+	std::cout << "Inventory: " << std::endl;
 	for (std::map<std::string, std::map<std::string, BinarySearchTree<Movie*>>>
 		::iterator mediaTypeIt = collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
 	{

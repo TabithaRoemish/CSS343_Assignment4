@@ -60,8 +60,8 @@ std::string Customer::getName()
 //prints command history for command child class History
 void Customer::printCommandHistory()
 {
+	std::cout << *this << std::endl;
 	std::queue<Command *> temp;
-	std::cout << CustomerName << " - " << CustomerID << ": " << endl;
 	while (!commandHistory.empty())
 	{
 		commandHistory.front()->print();

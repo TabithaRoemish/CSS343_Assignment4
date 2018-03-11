@@ -19,6 +19,7 @@ public:
 private:
 	Movie * mvPtr;
 	Customer * custPtr;
+	int tempStock;
 };
 
 #endif

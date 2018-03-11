@@ -22,6 +22,9 @@ public:
 	virtual bool operator==(Classic & cm);
 	virtual std::string getKey() const;
 	virtual int getStock()const;
+	virtual std::string getTitle() const;
+	virtual std::string getGenre() const;
+	virtual std::string getDirector() const;
 	virtual void brwMovie();
 	virtual void rtnMovie();
 
@@ -31,6 +34,7 @@ public:
 
 private:
 	int stock;
+	std::string genre;
 	std::string director;
 	std::string title;
 	std::string actor;
