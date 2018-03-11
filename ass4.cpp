@@ -2,6 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: main()
+//      This class runs the main method that is used to run the
+//      "Movie Rental Store"
 
 #include<iostream>
 #include "store.h"

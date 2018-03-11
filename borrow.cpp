@@ -14,12 +14,17 @@ Borrow::Borrow(Customer *cust, Movie* mv)
 
 void Borrow::execute()
 {
-	custPtr->addCommand(this); //log cmd in customer's history log
-	custPtr->addMovie(mvPtr); //add movie to customer's outstanding movieList
 	if (mvPtr->getStock() > 0) // if stock
+	{
+		custPtr->addCommand(this); //log cmd in customer's history log
+		custPtr->addMovie(mvPtr); //add movie to customer's outstanding movieList
 		mvPtr->brwMovie(); //removes 1 from stock
+	}
 	else
-		std::cout << "Movie is out of stock" << std::endl;
+	{
+		std::cout << "Movie out of stock: ";
+		mvPtr->print();
+	}
 }
 
 void Borrow::print()

@@ -31,12 +31,14 @@ bool Classic::operator>(Classic & cl)
 {
     if (this->releaseYear > cl.releaseYear)
         return true;
-    else if (this->releaseYear == cl.releaseYear)
-        if (this->releaseMonth > cl.releaseMonth)
-            return true;
-        else if (this->releaseMonth == cl.releaseMonth)
-            if (this->actor > cl.actor)
-                return true;
+	else if (this->releaseYear == cl.releaseYear)
+	{
+		if (this->releaseMonth > cl.releaseMonth)
+			return true;
+		else if (this->releaseMonth == cl.releaseMonth)
+			if (this->actor > cl.actor)
+				return true;
+	}
     return false;
 }
 

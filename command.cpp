@@ -12,15 +12,6 @@
 #include <iostream>
 #include <sstream>
 
-//B 1234 D C 9 1938 Katherine Hepburn 
-//B 1234 D F Pirates of the Caribbean, 2003 
-//R 1234 D C 9 1938 Katherine Hepburn 
-//B 1234 D D Steven Spielberg, Schindler's List, 
-//S 
-//H 1234
-
-
-
 Command * Command::create(std::string identifier)
 {
 	int custNum = 0; 
@@ -48,7 +39,7 @@ Command * Command::create(std::string identifier)
 	Customer * customer = Store::customerList.search(custNum);
 	if (customer == nullptr)
 	{
-		std::cerr << "Invalid Customer ID";
+		std::cerr<< "Customer ID: " << custNum << " is not valid" << std::endl;
 		return nullptr; //return error if customer does not exist
 	}
 
@@ -74,24 +65,29 @@ Command * Command::create(std::string identifier)
 				std::string yr = to_string(year);
 				if (Store::collection[mediaCode][movieCode].findWithString(yr + actor) == 1)
 				{
-					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(yr + actor);
+					Movie * movie = Store::collection[mediaCode][movieCode].
+						returnItemWithString(yr + actor);
 					cmd = make(actionCode, customer, movie);
 				}
 				else
-					std::cerr << "Movie does not exist" << std::endl;
+					std::cerr << "The movie, " << movieCode << ": " <<
+						actor << " " << yr << " does not exist" << std::endl;
 			}
 			else if (movieCode == "D")
 			{
 				std::getline(ss, director, ',');
 				ss.get(); // remove comma from ss
 				std::getline(ss, title, ',');
-				if (Store::collection[mediaCode][movieCode].findWithString(director + title) == 1)
+				if (Store::collection[mediaCode][movieCode].
+					findWithString(director + title) == 1)
 				{
-					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(director + title);
+					Movie * movie = Store::collection[mediaCode][movieCode].
+						returnItemWithString(director + title);
 					cmd = make(actionCode, customer, movie);
 				}
 				else
-					std::cerr << "Movie does not exist" << std::endl;
+					std::cerr << "The movie, " << movieCode << ": " <<
+					title << " " << director << " does not exist" << std::endl;
 			}
 			else if (movieCode == "F")
 			{
@@ -104,16 +100,17 @@ Command * Command::create(std::string identifier)
 					cmd = make(actionCode, customer, movie);
 				}
 				else
-					std::cerr << "Movie does not exist" << std::endl;
+					std::cerr << "The movie, " << movieCode << ": " <<
+					title << " " << yr << " does not exist" << std::endl;
 			}
 			else
-				std::cerr << "Invalid Video Code" << std::endl;
+				std::cerr << movieCode << " is an invalid video code" << std::endl;
 		}
 		else
-			std::cerr << "Invalid Media Code" << std::endl;
+			std::cerr << mediaCode << " is an invalid media code" << std::endl;
 	}
 	else
-		std::cerr << "invalid action code" << std::endl;
+		std::cerr << actionCode << "is an invalid command code" << std::endl;
 
 	return cmd;
 }

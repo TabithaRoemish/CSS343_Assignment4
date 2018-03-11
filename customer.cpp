@@ -105,6 +105,6 @@ void Customer::clearMovieList()
 
 std::ostream&  operator<<(std::ostream& out, const Customer & cust)
 {
-	out << cust.CustomerID  << cust.CustomerName;
+	out << cust.CustomerID  << " " << cust.CustomerName;
 	return out;
 }

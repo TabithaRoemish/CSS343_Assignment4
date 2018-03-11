@@ -1,6 +1,13 @@
-﻿  store.cpp
+﻿  ass4.cpp
+  Generating Code...
+  Compiling...
+  store.cpp
   return.cpp
+  inventory.cpp
+  history.cpp
+  hashtable.cpp
   customer.cpp
+  command.cpp
   borrow.cpp
   Generating Code...
   ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.exe

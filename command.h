@@ -18,6 +18,7 @@ class Command
 {
 public:
 	friend class Store;
+	Command() {};
 	virtual ~Command() {};
 	virtual void print() = 0;
 	virtual void execute() = 0;

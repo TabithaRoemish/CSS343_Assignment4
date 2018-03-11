@@ -10,6 +10,7 @@
 #include "binarysearchtree.h"
 #include "movie.h"
 
+
 #include "comedy.h"
 #include "classic.h"
 #include "drama.h"
@@ -18,6 +19,7 @@
 std::set<std::string> Store::commandCodes = { "B", "R", "I", "H" };
 std::set<std::string> Store::mediaCodes = { "D" };
 std::set<std::string> Store::movieCodes = { "C", "D", "F" };
+std::queue<Command*> Store::commandPtrs;
 HashMap Store::customerList;
 std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> Store::collection;
 
@@ -25,6 +27,13 @@ std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> Store::c
 Store::~Store()
 {
 	//hashmap customerList releases space made for hash elements and Customers
+	//BST releses Movie space
+	//release commands
+	while (!commandPtrs.empty())
+	{
+		delete commandPtrs.front();
+		commandPtrs.pop();
+	}
 }
 
 //reads DVDs specifically because it adds all files to collection["D"]
@@ -126,7 +135,11 @@ void Store::readCommands(std::string filename)
 	if (toRead.is_open())
 	{
 		while (std::getline(toRead, input))
+		{
 			Command * cmd = Command::create(input);
+			if(cmd != nullptr)
+				commandPtrs.push(cmd);
+		}
 		input = "";
 	}
 	else
@@ -148,13 +161,14 @@ void Store::printInventory()
 		::iterator mediaTypeIt = collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
 	{
 		std::cout << mediaTypeIt->first << ": " << endl;
-		auto genreIt = mediaTypeIt->second.begin();
-		for (genreIt; genreIt != mediaTypeIt->second.end(); genreIt++)
+		for (auto genreIt = mediaTypeIt->second.begin(); 
+			genreIt != mediaTypeIt->second.end(); genreIt++)
 		{
 			std::cout << "   " << genreIt->first << ": " << endl;
 			genreIt->second.print();
 		}
 	}
+	std::cout << endl;
 }
 
 

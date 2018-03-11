@@ -7,12 +7,13 @@
 #define STORE_H
 #include <string>
 #include <map>
-#include <vector>
+#include <queue>
 #include <set>
 #include "customer.h"
 #include "hashtable.h"
 #include "binarysearchtree.h"
 
+class Command;
 class HashMap;
 class Store
 {
@@ -28,13 +29,16 @@ public:
 	static void printInventory();
 
 private:
-	static std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> collection;
-	static HashMap customerList;
-	static std::set<std::string> commandCodes;
-	static std::set<std::string> mediaCodes;
-	static std::set<std::string> movieCodes;
+	static std::map< std::string, std::map<std::string, 
+		BinarySearchTree<Movie*>>> collection; //holds list of Movie Ptrs
+	static HashMap customerList; //Holds list of customers
+	// list of available commands ex)'B', 'R'
+	static std::set<std::string> commandCodes;  
+	static std::set<std::string> mediaCodes; //list of mediacodes ex) D for DVD
+	static std::set<std::string> movieCodes; //list of movieCodes ex) F, D
+	// holds command pointers to release in destructor
+	static std::queue<Command*> commandPtrs; 
 	
 	
 };
-
 #endif
