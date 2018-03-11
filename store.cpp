@@ -2,6 +2,11 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 2, 2018
 //	File contains: store class definitions
+//      The Store class also contains a HashTable for all the Store’s Customers.
+//      Manager for all of the Store’s database which includes all the Movies sorted 
+//      by their types, as well as all the Customers of the Store. 
+//      It is assumed that all input is correctly formatted according to the 
+//      homework specification file.
 
 #include "store.h"
 #include <fstream>
@@ -39,17 +44,19 @@ void Store::readDVDMovies(std::string filename)
 	D, 10, Phillippe De Broca, King of Hearts, 1967*/
 
 	std::ifstream toRead(filename);
-
 	std::string input = "";
-
 	if (toRead.is_open())
-
 	{
 		while (std::getline(toRead, input))
 		{
+			// calls the Movie class's create to 
+			// create the correct movie obbject and 
+			// stores it into a pointer
 			Movie * mvPtr = Movie::create(input);
 			if (mvPtr != nullptr)
 			{
+				// add's the movie obbject to the 
+				// appropriate BST
 				std::string code = input.substr(0, 1);
 				collection["D"][code].add(mvPtr);
 			}
@@ -73,12 +80,12 @@ void Store::readDVDMovies(std::string filename)
 	//collection["D"]["D"].add(dram);
 	//collection["D"]["C"].add(clas);
 
+	// prints the inventory
 	printInventory();
-	
 	
 }
 
-//reads customers from file, adds customers to hashtable
+// reads customers from file, adds customers to hashtable
 void Store::readCustomers(std::string filename)
 {
 	//1111 Mouse Mickey 
@@ -93,7 +100,7 @@ void Store::readCustomers(std::string filename)
 	{
 		while (std::getline(toRead, input))
 		{
-
+			// gets the custormer ID
 			ss << input;
 			ss >> custId;
 			std::getline(ss,custName);
@@ -107,7 +114,7 @@ void Store::readCustomers(std::string filename)
 				custId = 0;
 				custName = "";
 				ss.clear();
-			}//else continue without comment
+			} // else continue without comment
 		}
 		customerList.print(); // used for testing
 	}
@@ -116,7 +123,7 @@ void Store::readCustomers(std::string filename)
 	toRead.close();
 }
 
-//reads input string and sends it to command.create to make specific commands
+// reads input string and sends it to command.create to make specific commands
 void Store::readCommands(std::string filename)
 {
 	std::ifstream toRead(filename);
@@ -146,10 +153,13 @@ void Store::printInventory()
 	for (std::map<std::string, std::map<std::string, BinarySearchTree<Movie*>>>
 		::iterator mediaTypeIt = collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
 	{
+		// prints teh string vlaue for media type
 		std::cout << mediaTypeIt->first << ": " << endl;
 		auto genreIt = mediaTypeIt->second.begin();
+		// prints the contents of BST's
 		for (genreIt; genreIt != mediaTypeIt->second.end(); genreIt++)
 		{
+			// prints the genre type
 			std::cout << "   " << genreIt->first << ": " << endl;
 			genreIt->second.print();
 		}
