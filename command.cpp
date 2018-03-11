@@ -24,7 +24,7 @@
 Command * Command::create(std::string identifier)
 {
 	int custNum = 0; 
-	char actionCode = identifier[0];
+	char actionCode = ' ';
 	std::string movieCode ="";
 	std::string mediaCode ="";
 	int month = 0;
@@ -36,75 +36,81 @@ Command * Command::create(std::string identifier)
 	std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>>
 		::iterator it = Store::collection.begin();
 	Command * cmd = nullptr;
+	
+	ss >> actionCode;
 
-	//if inventory, skip the rest
+	//if inventory
 	if (actionCode == 'I')
 		return make(actionCode, nullptr, nullptr);
 
-	//check command code exists
-	if (Store::commandCodes.count(identifier.substr(0, 1)) == 1)
+	//check customer
+	ss >> custNum;
+	Customer * customer = Store::customerList.search(custNum);
+	if (customer == nullptr)
 	{
-		ss >> custNum; // check customer exists
-		Customer * customer = Store::customerList.search(custNum);
-		if (customer != nullptr)
+		std::cerr << "Invalid Customer ID";
+		return nullptr; //return error if customer does not exist
+	}
+
+	//if history
+	if (actionCode == 'H')
+	{
+		return make(actionCode, customer, nullptr);
+	}
+
+	//if return or borrow 
+	if (actionCode == 'B' || actionCode == 'R')
+	{
+		ss >> mediaCode; //check mediaType exists
+		if (Store::mediaCodes.count(mediaCode) == 1)
 		{
-			ss >> mediaCode; //check mediaType exists
-			if (Store::mediaCodes.count(mediaCode) == 1)
+			ss >> movieCode; 
+			ss.get(); //get space after movieCode
+			if (movieCode == "C")
 			{
-				ss >> movieCode; //check movie code exists
-				if (movieCode == "C")
-				{//classic - year + actor
-				 //B 1234 D C 9 1938 Katherine Hepburn 
-					ss>> month >> year;
-					ss >> actor;
-					std::string yr = "" + year;
-					if (Store::collection[mediaCode][movieCode].findWithString(yr + actor) == 1)
-					{
-						Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(yr + actor);
-						cmd = make(actionCode, customer, movie);
-						cmd->execute();
-					}
-					else
-						std::cerr << "Movie does not exist" << std::endl;
-				}
-				else if (movieCode == "D")
-				{//Drama = director + title
-				 //B 1234 D D Steven Spielberg, Schindler's List, 
-					std::getline(ss, director, ',');
-					ss.get(); // remove comma from ss
-					std::getline(ss, title, ',');
-					if (Store::collection[mediaCode][movieCode].findWithString(director + title) == 1)
-					{
-						Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(director + title);
-						cmd = make(actionCode, customer, movie);
-						cmd->execute();
-					}
-					else
-						std::cerr << "Movie does not exist" << std::endl;
-				}
-				else if (movieCode == "F")
-				{//Comedy = Title + year
-				 //B 1234 D F Pirates of the Caribbean, 2003
-					std::getline(ss, title, ',');
-					ss >> year;
-					std::string yr = "" + year;
-					if (Store::collection[mediaCode][movieCode].findWithString(title + yr) == 1)
-					{
-						Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(title + yr);
-						cmd = make(actionCode, customer, movie);
-						cmd->execute();
-					}
-					else
-						std::cerr << "Movie does not exist" << std::endl;
+				ss>> month >> year;
+				ss.get(); //get space after year
+				std::getline(ss, actor, '\n');
+				std::string yr = to_string(year);
+				if (Store::collection[mediaCode][movieCode].findWithString(yr + actor) == 1)
+				{
+					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(yr + actor);
+					cmd = make(actionCode, customer, movie);
 				}
 				else
-					std::cerr << "Invalid Video Code" << std::endl;
+					std::cerr << "Movie does not exist" << std::endl;
+			}
+			else if (movieCode == "D")
+			{
+				std::getline(ss, director, ',');
+				ss.get(); // remove comma from ss
+				std::getline(ss, title, ',');
+				if (Store::collection[mediaCode][movieCode].findWithString(director + title) == 1)
+				{
+					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(director + title);
+					cmd = make(actionCode, customer, movie);
+				}
+				else
+					std::cerr << "Movie does not exist" << std::endl;
+			}
+			else if (movieCode == "F")
+			{
+				std::getline(ss, title, ',');
+				ss >> year;
+				std::string yr = to_string(year);
+				if (Store::collection[mediaCode][movieCode].findWithString(title + yr) == 1)
+				{
+					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(title + yr);
+					cmd = make(actionCode, customer, movie);
+				}
+				else
+					std::cerr << "Movie does not exist" << std::endl;
 			}
 			else
-				std::cerr << "Invalid Media Code" << std::endl;
+				std::cerr << "Invalid Video Code" << std::endl;
 		}
 		else
-			std::cerr << "Customer not found" << std::endl;
+			std::cerr << "Invalid Media Code" << std::endl;
 	}
 	else
 		std::cerr << "invalid action code" << std::endl;
@@ -119,21 +125,25 @@ Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 	case 'B':
 	{
 		cmd = new Borrow(cust, mv);
+		cmd->execute();
 		break;
 	}
 	case 'R':
 	{
 		cmd = new Return(cust, mv);
+		cmd->execute();
 		break;
 	}
 	case 'I':
 	{
 		cmd = new Inventory();
+		cmd->execute();
 		break;
 	}
 	case 'H':
 	{
 		cmd = new History(cust);
+		cmd->execute();
 		break;
 	}
 	default : 

@@ -20,7 +20,11 @@ public:
 	virtual bool operator>(Movie & mv) = 0;
 	virtual bool operator<(Movie & mv) = 0;
 	virtual bool operator==(Movie & mv) = 0;
-	virtual std::string  getKey() = 0;
+
+	virtual std::string  getKey() const = 0;
+	virtual int getStock() const = 0;
+	virtual void brwMovie() = 0;
+	virtual void rtnMovie() = 0;
 
 };
 

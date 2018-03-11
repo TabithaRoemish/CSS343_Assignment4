@@ -16,7 +16,6 @@ int main()
 	st.readDVDMovies("data4movies.txt");
 	st.readCommands("data4commands.txt");
 
-
 	return 0;
 }
 

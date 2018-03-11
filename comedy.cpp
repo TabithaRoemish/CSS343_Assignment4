@@ -65,7 +65,20 @@ bool Comedy::operator==(Movie & mv)
 	return *this == *ptr;
 }
 
-std::string Comedy::getKey()
+std::string Comedy::getKey() const
 {
 	return key;
+}
+int Comedy::getStock() const
+{
+	return stock;
+}
+void Comedy::brwMovie()
+{
+	if (stock > 0)
+		stock--;
+}
+void Comedy::rtnMovie()
+{
+	stock++;
 }

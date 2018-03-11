@@ -13,15 +13,15 @@ Return::Return(Customer * cust, Movie * mv)
 }
 void Return::print()
 {
-	std::cout << "Returned: ";
+	std::cout << "   Returned: ";
 	mvPtr->print();
 }
 void Return::execute()
 {
 	if (custPtr->movieRented(mvPtr))
 	{
-		custPtr->returnMovie(mvPtr);
-		custPtr->addCommand(this);
-		//add 1 to movie stock mv->addStock();
+		custPtr->returnMovie(mvPtr); //removes movie from customer's movie list
+		custPtr->addCommand(this); //log command in customer's command history
+		mvPtr->rtnMovie(); // adds 1 to movie stock
 	}
 }

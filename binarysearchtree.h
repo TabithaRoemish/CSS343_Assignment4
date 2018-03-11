@@ -259,7 +259,6 @@ void BinarySearchTree<ItemType>::printHelper(BinaryNode<ItemType>* current)
 		printHelper(current->getLeftChildPtr());
 		std::cout << "      ";
 		current->getItem()->print();
-		std::cout << std::endl;
 		printHelper(current->getRightChildPtr());
 	}
 }

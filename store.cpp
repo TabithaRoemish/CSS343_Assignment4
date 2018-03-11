@@ -96,6 +96,7 @@ void Store::readCustomers(std::string filename)
 
 			ss << input;
 			ss >> custId;
+			ss.get(); // get space before name
 			std::getline(ss,custName);
 		//check if customer is in list, if not (nullptr returned) then add
 			if (customerList.search(custId) == nullptr) 

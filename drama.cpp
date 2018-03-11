@@ -12,7 +12,7 @@ Drama::Drama(int stock, std::string director, std::string title, int year)
     this->director = director;
     this->title = title;
     this->releaseYear = year;
-    this->key = title + std::to_string (year);
+    this->key = director + title;
 }
 
 void Drama::print()
@@ -59,7 +59,23 @@ bool Drama::operator==(Movie & mv)
 	return *this == *ptr;
 }
 
-std::string Drama::getKey()
+std::string Drama::getKey() const
 {
 	return key;
+}
+
+int Drama::getStock() const
+{
+	return stock;
+}
+
+void Drama::brwMovie()
+{
+	if (stock > 0)
+		stock--;
+}
+
+void Drama::rtnMovie()
+{
+	stock++;
 }

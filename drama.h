@@ -19,7 +19,10 @@ public:
 	//sort by director then title
 	virtual bool operator>(Drama & dm);
 	virtual bool operator==(Drama & dm);
-	virtual std::string  getKey();
+	virtual std::string  getKey() const;
+	virtual int getStock() const;
+	virtual void brwMovie();
+	virtual void rtnMovie();
 
 	virtual bool operator<(Movie & mv);
 	virtual bool operator>(Movie & mv);

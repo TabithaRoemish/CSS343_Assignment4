@@ -14,7 +14,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
 	this->actor = actor;
     this->releaseMonth = month;
     this->releaseYear = year;
-    this->key = title + std::to_string (year);
+    this->key = std::to_string (year) + actor;
 }
 
 void Classic::print()
@@ -68,7 +68,23 @@ bool Classic::operator==(Movie & mv)
 	return *this == *ptr;
 }
 
-std::string Classic::getKey()
+std::string Classic::getKey() const
 {
 	return key;
+}
+
+int Classic::getStock() const
+{
+	return stock;
+}
+
+void Classic::brwMovie()
+{
+	if (stock > 0)
+		stock--;
+}
+
+void Classic::rtnMovie()
+{
+	stock++;
 }

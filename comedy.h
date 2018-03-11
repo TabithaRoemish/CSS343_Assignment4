@@ -19,8 +19,11 @@ public:
 	virtual ~Comedy() {};
 	
 	virtual void print(); // F, 10, Nora Ephron, You've Got Mail, 1998
-	virtual std::string getKey();
-	
+	virtual std::string getKey() const;
+	virtual int getStock()const;
+	virtual void brwMovie();
+	virtual void rtnMovie();
+
 	//sort by title then year
 	virtual bool operator>(Comedy & cm);
 	virtual bool operator==(Comedy & cm);

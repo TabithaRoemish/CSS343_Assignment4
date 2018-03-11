@@ -61,13 +61,14 @@ std::string Customer::getName()
 void Customer::printCommandHistory()
 {
 	std::queue<Command *> temp;
-
+	std::cout << CustomerName << " - " << CustomerID << ": " << endl;
 	while (!commandHistory.empty())
 	{
-		std::cout << commandHistory.front();
+		commandHistory.front()->print();
 		temp.push(commandHistory.front());
 		commandHistory.pop();
 	}
+	std::cout << endl;
 	commandHistory = temp;
 }
 
