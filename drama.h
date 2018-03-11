@@ -1,7 +1,9 @@
 //	File Name: drama.h
-//	Programmer: Tabitha Roemish
+//	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: drama class declaration [D]
+//      Inherits from the Movie class. Holds a single Drama movie type’s attributes.
+
 
 #ifndef DRAMA_H
 #define DRAMA_H
@@ -16,7 +18,8 @@ public:
 	virtual ~Drama() {};
 	virtual void print(); // D, 10, Steven Spielberg, Schindler's List, 1993
 	
-	//sort by director then title
+	// sort by director then title
+	// methods to override 
 	virtual bool operator>(Drama & dm);
 	virtual bool operator==(Drama & dm);
 	virtual std::string  getKey();
@@ -26,11 +29,14 @@ public:
 	virtual bool operator==(Movie & mv);
 
 private:
+        // variables for Drama class
+	// Title + year to store in BST and we can check 
+	// key match rather than check random properties
 	int stock;
 	std::string director;
 	std::string title;
 	int releaseYear;
-	std::string key; //Title + year to store in BST and we can check key match rather than check random properties
+	std::string key; 
 };
 
 #endif
