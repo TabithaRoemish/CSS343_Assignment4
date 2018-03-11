@@ -2,6 +2,7 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 2, 2018
 //	File contains: customer class definitions
+//      Contains information related to each individual Store Customer.
 
 #include "customer.h"
 #include <iostream>
@@ -89,6 +90,7 @@ void Customer::returnMovie(Movie* mv)
 		movieList.erase(it);
 }
 
+// clears the command history
 void Customer::clearCommandHistory()
 {
  //no mem alloc for queue so pop all members should not leak
@@ -96,12 +98,15 @@ void Customer::clearCommandHistory()
 		commandHistory.pop();
 
 }
+
+// clears the movie list
 void Customer::clearMovieList()
 {
 	//no memalloc so clear should not result in mem leak
 	movieList.clear();
 }
 
+// << overload using friend class
 std::ostream&  operator<<(std::ostream& out, const Customer & cust)
 {
 	out << cust.CustomerID  << cust.CustomerName;
