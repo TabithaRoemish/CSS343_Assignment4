@@ -1,14 +1,18 @@
-﻿  ass4.cpp
+﻿  command.cpp
+  comedy.cpp
+  classic.cpp
   Generating Code...
   Compiling...
   store.cpp
   return.cpp
+  movie.cpp
   inventory.cpp
   history.cpp
   hashtable.cpp
+  drama.cpp
   customer.cpp
-  command.cpp
   borrow.cpp
+  ass4.cpp
   Generating Code...
   ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.exe
   ass4.vcxproj -> E:\CSS 343\Assignment 4\ass4\Debug\ass4.pdb (Partial PDB)

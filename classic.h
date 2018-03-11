@@ -25,6 +25,7 @@ public:
 	virtual std::string getTitle() const;
 	virtual std::string getGenre() const;
 	virtual std::string getDirector() const;
+	virtual int getReleaseYear() const;
 	virtual void brwMovie();
 	virtual void rtnMovie();
 
@@ -33,6 +34,7 @@ public:
 	virtual bool operator==(Movie & mv);
 
 private:
+
 	int stock;
 	std::string genre;
 	std::string director;

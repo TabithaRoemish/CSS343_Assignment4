@@ -14,7 +14,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
 	this->actor = actor;
     this->releaseMonth = month;
     this->releaseYear = year;
-    this->key = std::to_string (year) + actor;
+    this->key = std::to_string(year) + actor;
 	this->genre = "Classic";
 }
 
@@ -96,11 +96,19 @@ std::string Classic::getTitle() const
 {
 	return title;
 }
+
 std::string Classic::getGenre() const
 {
 	return genre;
 }
+
 std::string Classic::getDirector() const
 {
 	return director;
 }
+
+int Classic::getReleaseYear() const
+{
+	return releaseYear;
+}
+

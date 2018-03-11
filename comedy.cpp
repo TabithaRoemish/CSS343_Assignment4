@@ -70,15 +70,18 @@ std::string Comedy::getKey() const
 {
 	return key;
 }
+
 int Comedy::getStock() const
 {
 	return stock;
 }
+
 void Comedy::brwMovie()
 {
 	if (stock > 0)
 		stock--;
 }
+
 void Comedy::rtnMovie()
 {
 	stock++;
@@ -88,11 +91,18 @@ std::string Comedy::getTitle() const
 {
 	return title;
 }
+
 std::string Comedy::getGenre() const
 {
 	return genre;
 }
+
 std::string Comedy::getDirector() const
 {
 	return director;
+}
+
+int Comedy::getReleaseYear() const
+{
+	return releaseYear;
 }

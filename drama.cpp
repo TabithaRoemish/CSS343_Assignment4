@@ -93,3 +93,8 @@ std::string Drama::getDirector() const
 {
 	return director;
 }
+
+int Drama::getReleaseYear() const
+{
+	return releaseYear;
+}

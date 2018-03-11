@@ -23,6 +23,8 @@ Command * Command::create(std::string identifier)
 	int year = 0;
 	std::string title = "";
 	std::string actor = "";
+	std::string actFirst = "";
+	std::string actLast = "";
 	std::string director = "";
 	std::stringstream ss(identifier);
 	std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>>
@@ -40,7 +42,7 @@ Command * Command::create(std::string identifier)
 	Customer * customer = Store::customerList.search(custNum);
 	if (customer == nullptr)
 	{
-		std::cout << "Customer ID: " << custNum << " is not valid" << std::endl;
+		std::cerr << "Customer ID: " << custNum << " is not valid" << std::endl;
 		return nullptr; //return error if customer does not exist
 	}
 
@@ -62,21 +64,19 @@ Command * Command::create(std::string identifier)
 			{
 				ss >> month >> year;
 				ss.get(); //get space after year
-				std::getline(ss, actor);
+				std::getline(ss, actFirst, ' ');
+				std::getline(ss, actLast, '\r');
+				ss.get(); //get carrige return
+				actor = actFirst + " " + actLast;
 				std::string yr = std::to_string(year);
-				std::string find(yr + actor);
-				if (isMovie(mediaCode, movieCode, find))
-					cout << "movie found " << find;
-				if (Store::collection[mediaCode][movieCode].findWithString(find) == 1)
-				{
-					Movie * movie = Store::collection[mediaCode][movieCode].
-						returnItemWithString(find);
-					cmd = make(actionCode, customer, movie);
-				}
+
+				Movie * test = Store::collection[mediaCode][movieCode].returnItemWithString(yr + actor);
+				if(test != nullptr)
+					cmd = make(actionCode, customer, test);
 				else
 				{
-					std::cout << "The movie, " << actor;
-					std::cout << ", " << yr << " does not exist" << std::endl;
+					std::cerr << "The movie, " << actor;
+					std::cerr << ", " << yr << " does not exist" << std::endl;
 				}
 			}
 			else if (movieCode == "D")
@@ -84,17 +84,14 @@ Command * Command::create(std::string identifier)
 				std::getline(ss, director, ',');
 				ss.get(); // remove comma from ss
 				std::getline(ss, title, ',');
-				if (Store::collection[mediaCode][movieCode].
-					findWithString(director + title) == 1)
-				{
-					Movie * movie = Store::collection[mediaCode][movieCode].
-						returnItemWithString(director + title);
-					cmd = make(actionCode, customer, movie);
-				}
+
+				Movie * mv = Store::collection[mediaCode][movieCode].returnItemWithString(director + title);
+				if (mv != nullptr)
+					cmd = make(actionCode, customer, mv);
 				else
 				{
-					std::cout << "The movie, " << movieCode << ": " << title;
-					std::cout << " " << director << " does not exist" << std::endl;
+					std::cerr << "The movie, " << movieCode << ": " << title;
+					std::cerr << " " << director << " does not exist" << std::endl;
 				}
 			}
 			else if (movieCode == "F")
@@ -102,25 +99,24 @@ Command * Command::create(std::string identifier)
 				std::getline(ss, title, ',');
 				ss >> year;
 				std::string yr = std::to_string(year);
-				if (Store::collection[mediaCode][movieCode].findWithString(title + yr) == 1)
-				{
-					Movie * movie = Store::collection[mediaCode][movieCode].returnItemWithString(title + yr);
-					cmd = make(actionCode, customer, movie);
-				}
+
+				Movie * mv = Store::collection[mediaCode][movieCode].returnItemWithString(title + yr);
+				if (mv != nullptr)
+					cmd = make(actionCode, customer, mv);
 				else
 				{
-					std::cout << "The movie, " << movieCode << ": " << title;
-					std::cout << " " << yr << " does not exist" << std::endl;
+					std::cerr << "The movie, " << movieCode << ": " << title;
+					std::cerr << " " << yr << " does not exist" << std::endl;
 				}
 			}
 			else
-				std::cout << movieCode << " is an invalid video code" << std::endl;
+				std::cerr << movieCode << " is an invalid video code" << std::endl;
 		}
 		else
-			std::cout << mediaCode << " is an invalid media code" << std::endl;
+			std::cerr << mediaCode << " is an invalid media code" << std::endl;
 	}
 	else
-		std::cout << actionCode << "is an invalid command code" << std::endl;
+		std::cerr << actionCode << "is an invalid command code" << std::endl;
 
 	return cmd;
 }

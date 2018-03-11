@@ -80,6 +80,10 @@ public:
 	// return item given string value, 
 	//requres ItemType have getKey() method that returns string
 	ItemType returnItemWithString(std::string itemKey);
+	//custom find for classic movies
+		//the string key was not working in g++/linux
+		//it wouldn't register as equal so created this custom
+		//function to seach for int year and then string
 
 private:
     // root of the tree
@@ -92,12 +96,6 @@ private:
 		const ItemType& target) const;
     // helper function for displaySideways to work recursively
     void sideways(BinaryNode<ItemType>* current, int level) const;
-
-	// other functions....
-	void printHelper(BinaryNode<ItemType>* current);
-	ItemType returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr, 
-		std::string itemKey);
-	bool findWithStringHelper(BinaryNode<ItemType>* subTreePtr, std::string itemKey);
 	void deleteTree(BinaryNode<ItemType>* current);
 	int getHeightHelper(BinaryNode<ItemType> * current) const;
 	int getNodeCountHelper(BinaryNode<ItemType> * current) const;
@@ -107,6 +105,14 @@ private:
 	bool compare(BinaryNode<ItemType> * t1, BinaryNode<ItemType> * t2) const;
 	void saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i);
 	static int insertCount;
+
+	//Rental Store custom functions
+	void printHelper(BinaryNode<ItemType>* current);
+	ItemType returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr, 
+		std::string itemKey);
+
+	
+	
 };
 
 template<class ItemType>
@@ -271,20 +277,17 @@ ItemType BinarySearchTree<ItemType>
 	return mv;
 }
 
+
 template<class ItemType>
 ItemType BinarySearchTree<ItemType>::
 	returnItemWithStringHelper(BinaryNode<ItemType>* subTreePtr,
 		std::string itemKey)
 {
-	std::cout << "find with string test: " << std::endl;
-	std::cout << "Current Key: " << subTreePtr->getItem()->getKey() << std::endl;
-	std::cout << " Search Key: " << itemKey << endl;
 	if (subTreePtr->getItem()->getKey() == itemKey)
 		return subTreePtr->getItem();
 	//check left
 	else if (itemKey < subTreePtr->getItem()->getKey())
 	{
-		std::cout << "Check Left" << std::endl;
 		if (subTreePtr->getLeftChildPtr() == nullptr)
 			return nullptr;
 		else
@@ -293,7 +296,6 @@ ItemType BinarySearchTree<ItemType>::
 	//check right
 	else if (itemKey > subTreePtr->getItem()->getKey())
 	{
-		std::cout << "Check Right" << std::endl;
 		if (subTreePtr->getRightChildPtr() == nullptr)
 			return nullptr;
 		else

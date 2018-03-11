@@ -26,6 +26,7 @@ public:
 	virtual std::string getTitle() const = 0;
 	virtual std::string getGenre() const = 0;
 	virtual std::string getDirector() const = 0;
+	virtual int getReleaseYear() const = 0;
 	virtual void brwMovie() = 0;
 	virtual void rtnMovie() = 0;
 
