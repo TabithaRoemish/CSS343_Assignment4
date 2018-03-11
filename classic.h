@@ -22,6 +22,7 @@ public:
 	virtual bool operator==(Classic & cm);
 	virtual std::string getKey();
 
+	virtual bool operator<(Movie & mv);
 	virtual bool operator>(Movie & mv);
 	virtual bool operator==(Movie & mv);
 

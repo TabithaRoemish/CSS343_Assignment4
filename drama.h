@@ -21,6 +21,7 @@ public:
 	virtual bool operator==(Drama & dm);
 	virtual std::string  getKey();
 
+	virtual bool operator<(Movie & mv);
 	virtual bool operator>(Movie & mv);
 	virtual bool operator==(Movie & mv);
 

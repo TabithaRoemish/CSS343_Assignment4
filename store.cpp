@@ -8,6 +8,7 @@
 #include <iostream>
 #include <sstream>
 #include "binarysearchtree.h"
+#include "movie.h"
 
 #include "comedy.h"
 #include "classic.h"

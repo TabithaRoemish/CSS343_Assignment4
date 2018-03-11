@@ -25,6 +25,7 @@ public:
 	virtual bool operator>(Comedy & cm);
 	virtual bool operator==(Comedy & cm);
 
+	virtual bool operator<(Movie & mv);
 	virtual bool operator>(Movie & mv);
 	virtual bool operator==(Movie & mv);
 	

@@ -50,13 +50,19 @@ bool Comedy::operator==(Comedy & cm)
 bool Comedy::operator>(Movie & mv)
 {
 	Comedy * ptr = dynamic_cast<Comedy*>(&mv);
-	return this > ptr;
+	return *this > *ptr;
+}
+
+bool Comedy::operator<(Movie & mv)
+{
+	Comedy * ptr = dynamic_cast<Comedy*>(&mv);
+	return *ptr > *this;
 }
 
 bool Comedy::operator==(Movie & mv)
 {
 	Comedy * ptr = dynamic_cast<Comedy*>(&mv);
-	return this == ptr;
+	return *this == *ptr;
 }
 
 std::string Comedy::getKey()

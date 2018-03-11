@@ -189,10 +189,12 @@ bool BinarySearchTree<ItemType>::contains(const ItemType& item) const {
 	return true;
 }
 
+//customized for Rental Store
+//add dereferencing to look at Movie objects
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::
 placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
-	if (*newNodePtr->getItem()> *subTreePtr->getItem())
+	if (*newNodePtr->getItem() > *subTreePtr->getItem())
 	{
 		if (subTreePtr->getRightChildPtr() == nullptr)
 			subTreePtr->setRightChildPtr(newNodePtr);
@@ -200,7 +202,7 @@ placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
 			placeNode(subTreePtr->getRightChildPtr(), newNodePtr);
 	}
 	//check left
-	if (*subTreePtr->getItem() > *newNodePtr->getItem())
+	if (*newNodePtr->getItem() < *subTreePtr->getItem())
 	{
 		if (subTreePtr->getLeftChildPtr() == nullptr)
 			subTreePtr->setLeftChildPtr(newNodePtr);
@@ -213,20 +215,22 @@ placeNode(BinaryNode<ItemType>* subTreePtr, BinaryNode<ItemType>* newNodePtr) {
 	return subTreePtr;
 }  // end placeNode
 
+//customized for Rental Store
+//add dereferencing to look at Movie objects
 template<class ItemType>
 BinaryNode<ItemType>* BinarySearchTree<ItemType>::
 findNode(BinaryNode<ItemType>* subTreePtr, const ItemType& target) const {
 
-	if (subTreePtr->getItem() == target)
+	if (*subTreePtr->getItem() == *target)
 		return subTreePtr;
 	//check left
-	else if (target < subTreePtr->getItem())
+	else if (*target < *subTreePtr->getItem())
 		if (subTreePtr->getLeftChildPtr() == nullptr)
 			return nullptr;
 		else
 			return findNode(subTreePtr->getLeftChildPtr(), target);
 	//check right
-	else if (target > subTreePtr->getItem())
+	else if (*target > *subTreePtr->getItem())
 		if (subTreePtr->getRightChildPtr() == nullptr)
 			return nullptr;
 		else
@@ -302,7 +306,8 @@ bool BinarySearchTree<ItemType>::findWithString(std::string itemKey)
 }
 
 
-
+//customized for Rental Store
+//add dereferencing to look at Movie objects
 template<class ItemType>
 void BinarySearchTree<ItemType>::rebalance() {
 	//save to array
@@ -402,6 +407,8 @@ int BinarySearchTree<ItemType>::getNodeCountHelper(BinaryNode<ItemType> * curren
 
 }
 
+//customized for Rental Store
+//delete space for movie pointers
 template<class ItemType>
 void BinarySearchTree<ItemType>::deleteTree(BinaryNode<ItemType>* current)
 {
@@ -409,6 +416,7 @@ void BinarySearchTree<ItemType>::deleteTree(BinaryNode<ItemType>* current)
 	{
 		deleteTree(current->getLeftChildPtr());
 		deleteTree(current->getRightChildPtr());
+		delete current->getItem();
 		delete current;
 	}
 }
@@ -426,6 +434,8 @@ inorder(void visit(ItemType&), BinaryNode<ItemType> * current) const
 	}
 }
 
+//customized for Rental Store
+//add dereferencing to add Movie objects to array
 template<class ItemType>
 void BinarySearchTree<ItemType>::
 saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i)
@@ -433,7 +443,7 @@ saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i)
 	if (current != nullptr)
 	{
 		saveToArray(current->getLeftChildPtr(), arr, i);
-		arr[i] = current->getItem();
+		arr[i] = *current->getItem();
 		i++;
 		saveToArray(current->getRightChildPtr(), arr, i);
 	}

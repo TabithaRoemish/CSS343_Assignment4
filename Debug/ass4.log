@@ -1,4 +1,7 @@
 ﻿  store.cpp
+  drama.cpp
+  comedy.cpp
+  classic.cpp
   Generating Code...
   Compiling...
   return.cpp

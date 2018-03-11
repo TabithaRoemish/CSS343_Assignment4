@@ -53,13 +53,19 @@ bool Classic::operator==(Classic & cl)
 bool Classic::operator>(Movie & mv)
 {
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
-	return ptr > this;
+	return  *this > *ptr;
+}
+
+bool Classic::operator<(Movie & mv)
+{
+	Classic * ptr = dynamic_cast<Classic*>(&mv);
+	return *ptr > *this;
 }
 
 bool Classic::operator==(Movie & mv)
 {
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
-	return this == ptr;
+	return *this == *ptr;
 }
 
 std::string Classic::getKey()

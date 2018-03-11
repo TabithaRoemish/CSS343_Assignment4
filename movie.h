@@ -18,6 +18,7 @@ public:
 
 	virtual void print() = 0;
 	virtual bool operator>(Movie & mv) = 0;
+	virtual bool operator<(Movie & mv) = 0;
 	virtual bool operator==(Movie & mv) = 0;
 	virtual std::string  getKey() = 0;
 
