@@ -5,8 +5,8 @@
 //		command class is abstract class for movie types 
 //              (Borrow[B], Return[R], Inventory[I], History[H])
 //      Parent class to Borrow, Return, Inventory & History classes. 
-//      This is an abstract class where the child classes must implement the methods within it. 
-
+//      This is an abstract class where the child classes 
+//      must implement the methods within it.
 
 #ifndef COMMAND_H
 #define COMMAND_H
