@@ -2,9 +2,11 @@
 //	Programmer: Tabitha Roemish, Prathyusha Pillari 
 //	Date: February 23, 2018
 //	File contains: Movie class declaration
-//		movie class is abstract class for movie types (Comedy[F], Drama[D], Classic[C])
-//     The parent class to Comedy, Drama and Classics classes.
-//     This is an abstract class where the child classes must implement the methods within it.
+//	movie class is abstract class for movie types
+//      (Comedy[F], Drama[D], Classic[C])
+//      The parent class to Comedy, Drama and Classics classes.
+//      This is an abstract class where the child classes must 
+//      implement the methods within it.
 
 #include "movie.h"
 #include <iostream>
@@ -65,7 +67,7 @@ Movie* Movie::create(std::string identifier)
             ss >> year;
             
             // creates the movie obbject of type classic
-            mov = new Classic(stock, director, title, actorFullName, month, year);
+           mov = new Classic(stock, director, title, actorFullName, month, year);
             break;
         }
         case 'D': {
