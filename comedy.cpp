@@ -106,7 +106,7 @@ void Comedy::rtnMovie()
 	stock++;
 }
 
-// returns teh title
+// returns the title
 std::string Comedy::getTitle() const
 {
 	return title;
