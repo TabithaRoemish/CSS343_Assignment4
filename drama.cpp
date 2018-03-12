@@ -2,7 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: drama class declaration [D]
-//      Inherits from the Movie class. Holds a single Drama movie type’s attributes.
+//      Inherits from the Movie class. 
+//      Holds a single Drama movie type’s attributes.
 
 #include "drama.h"
 #include <iostream>
