@@ -2,7 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: comedy class declaration
-//      Inherits from the Movie class. Holds a single Comedy movie type’s attributes.
+//      Inherits from the Movie class. Holds a single Comedy movie 
+//      type’s attributes.
 
 #ifndef COMEDY_H
 #define COMEDY_H
