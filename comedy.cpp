@@ -2,7 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 2, 2018
 //	File contains: comedy class definitions
-//      Inherits from the Movie class. Holds a single Comedy movie type’s attributes.
+//      Inherits from the Movie class. Holds a single Comedy 
+//      movie type’s attributes.
 
 #include "comedy.h"
 #include <iostream>
