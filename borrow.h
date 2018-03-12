@@ -6,6 +6,9 @@
 //      virtual execute function we Borrow the desired Movie by searching 
 //      our BST for it, and updating the stock -1. Assumes we have enough stock to Borrow. 
 
+////////////////////////////////////////////////////////////////////////////////
+// This is 80 characters - Keep all lines under 80 characters                 //
+////////////////////////////////////////////////////////////////////////////////
 
 #ifndef BORROW_H
 #define BORROW_H
