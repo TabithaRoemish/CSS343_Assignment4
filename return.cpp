@@ -33,8 +33,10 @@ void Return::execute()
 	if (custPtr->movieRented(mvPtr))
 	{
 		// class returnMovie funtion in Customer class
-		custPtr->returnMovie(mvPtr); //removes movie from customer's movie list
-		custPtr->addCommand(this); //log command in customer's command history
+		//removes movie from customer's movie list
+		custPtr->returnMovie(mvPtr); 
+		//log command in customer's command history
+		custPtr->addCommand(this); 
 		mvPtr->rtnMovie(); // adds 1 to movie stock
 		tempStock = mvPtr->getStock(); //capture stock after return
 
