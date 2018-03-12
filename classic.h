@@ -2,13 +2,13 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: classic class declaration
+//      Inherits from the Movie class. Holds a single Classic movie type’s attributes.
+
 
 #ifndef CLASSIC_H
 #define CLASSIC_H
 #include <string>
 #include "movie.h"
-
-
 
 class Classic : public Movie
 {
