@@ -2,10 +2,13 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 2, 2018
 //	File contains: classic class definitions
+//      Inherits from the Movie class. Holds a single Classic movie type’s attributes.
+
 
 #include "classic.h"
 #include <iostream>
 
+// constructor adds into the map
 Classic::Classic(int stock, std::string director, std::string title, std::string actor, int month, int year)
 {
     this->stock = stock;
@@ -18,6 +21,7 @@ Classic::Classic(int stock, std::string director, std::string title, std::string
 	this->genre = "Classic";
 }
 
+// prints the obbject
 void Classic::print()
 {
     //C, 10, George Cukor, Holiday, Cary Grant 9 1938
@@ -29,10 +33,14 @@ void Classic::print()
 }
 
 //Classic sorted by release date and then actor
+// returns true if the this releaseYear is > than the object
+// if releaseYear is same, retuns true if the this releaseMonth is > than the object
 bool Classic::operator>(Classic & cl)
 {
+	// comapres the releaseYears
     if (this->releaseYear > cl.releaseYear)
         return true;
+	// comapres the releaseMonths if releaseYear are equal
 	else if (this->releaseYear == cl.releaseYear)
 	{
 		if (this->releaseMonth > cl.releaseMonth)
@@ -44,8 +52,11 @@ bool Classic::operator>(Classic & cl)
     return false;
 }
 
+// returns true if the releaseYear and the releaseMonth 
+// and the actors are same
 bool Classic::operator==(Classic & cl)
 {
+	// compares releaseYear, releaseMonth and actors
     if (this->releaseYear == cl.releaseYear &&
         this->releaseMonth == cl.releaseMonth &&
         this->actor == cl.actor)
@@ -54,24 +65,31 @@ bool Classic::operator==(Classic & cl)
         return false;
 }
 
+// uses dynamic cast to comapre movie object and drama object
 bool Classic::operator>(Movie & mv)
 {
+	// returns true if this is > movie object
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
 	return  *this > *ptr;
 }
 
+// uses dynamic cast to comapre movie object and drama object
 bool Classic::operator<(Movie & mv)
 {
+	// returns true if this is < movie object
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
 	return *ptr > *this;
 }
 
+// uses dynamic cast to comapre movie object and drama object
 bool Classic::operator==(Movie & mv)
 {
+	// returns true if this is = movie object
 	Classic * ptr = dynamic_cast<Classic*>(&mv);
 	return *this == *ptr;
 }
 
+// returns for teh private variables
 std::string Classic::getKey() const
 {
 	return key;
