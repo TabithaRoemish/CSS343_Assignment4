@@ -3,7 +3,8 @@
 //	Date: March 4, 2018
 //	File contains: command abstract class definitions
 //      Parent class to Borrow, Return, Inventory & History classes. 
-//      This is an abstract class where the child classes must implement the methods within it. 
+//      This is an abstract class where the child classes 
+//      must implement the methods within it. 
 
 #include "command.h"
 #include "borrow.h"
@@ -55,7 +56,8 @@ Command * Command::create(std::string identifier)
 	Customer * customer = Store::customerList.search(custNum);
 	if (customer == nullptr)
 	{
-		std::cerr << "Customer ID: " << custNum << " is not valid" << std::endl;
+		std::cerr << "Customer ID: " << custNum << " is not valid" 
+			<< std::endl;
 		return nullptr; //return error if customer does not exist
 	}
 
@@ -89,7 +91,7 @@ Command * Command::create(std::string identifier)
 				else
 				{
 					std::cerr << "The movie, " << actor;
-					std::cerr << ", " << yr << " does not exist" << std::endl;
+		std::cerr << ", " << yr << " does not exist" << std::endl;
 				}
 			}
 			else if (movieCode == "D")
@@ -103,8 +105,8 @@ Command * Command::create(std::string identifier)
 					cmd = make(actionCode, customer, mv);
 				else
 				{
-					std::cerr << "The movie, " << movieCode << ": " << title;
-					std::cerr << " " << director << " does not exist" << std::endl;
+		std::cerr << "The movie, " << movieCode << ": " << title;
+		std::cerr << " " << director << " does not exist" << std::endl;
 				}
 			}
 			else if (movieCode == "F")
@@ -118,18 +120,18 @@ Command * Command::create(std::string identifier)
 					cmd = make(actionCode, customer, mv);
 				else
 				{
-					std::cerr << "The movie, " << movieCode << ": " << title;
-					std::cerr << " " << yr << " does not exist" << std::endl;
+		std::cerr << "The movie, " << movieCode << ": " << title;
+		std::cerr << " " << yr << " does not exist" << std::endl;
 				}
 			}
 			else
-				std::cerr << movieCode << " is an invalid video code" << std::endl;
+	std::cerr << movieCode << " is an invalid video code" << std::endl;
 		}
 		else
-			std::cerr << mediaCode << " is an invalid media code" << std::endl;
+	std::cerr << mediaCode << " is an invalid media code" << std::endl;
 	}
 	else
-		std::cerr << actionCode << "is an invalid command code" << std::endl;
+	std::cerr << actionCode << "is an invalid command code" << std::endl;
 
 	return cmd;
 }
