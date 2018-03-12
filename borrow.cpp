@@ -2,10 +2,14 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 3, 2018
 //	File contains: borrow class definition
+//      Inherits from the Command class. Using the action string and 
+//      virtual execute function we Borrow the desired Movie by searching 
+//      our BST for it, and updating the stock -1. Assumes we have enough stock to Borrow.
 
 #include "borrow.h"
 #include <iostream>
 
+// constructor to initialize 
 Borrow::Borrow(Customer *cust, Movie* mv)
 {
 	mvPtr = mv;
@@ -13,6 +17,7 @@ Borrow::Borrow(Customer *cust, Movie* mv)
 	tempStock = 0;
 }
 
+// execute method
 void Borrow::execute()
 {
 	tempStock = 0; // reset temp stock before execute
@@ -30,6 +35,7 @@ void Borrow::execute()
 	}
 }
 
+// prints the borrowed items
 void Borrow::print()
 {
 	std::cout<< "  Borrowed: " << mvPtr->getGenre() << ", " << tempStock;
