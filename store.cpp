@@ -3,8 +3,9 @@
 //	Date: March 2, 2018
 //	File contains: store class definitions
 //      The Store class also contains a HashTable for all the Store’s Customers.
-//      Manager for all of the Store’s database which includes all the Movies sorted 
-//      by their types, as well as all the Customers of the Store. 
+//      Manager for all of the Store’s database which includes all 
+//      the Movies sorted by their types, as well as all the Customers 
+//      of the Store. 
 //      It is assumed that all input is correctly formatted according to the 
 //      homework specification file.
 
@@ -26,14 +27,16 @@ std::set<std::string> Store::mediaCodes = { "D" };
 std::set<std::string> Store::movieCodes = { "C", "D", "F" };
 std::queue<Command*> Store::commandPtrs;
 HashMap Store::customerList;
-std::map< std::string, std::map<std::string, BinarySearchTree<Movie*>>> Store::collection;
+std::map< std::string, std::map<std::string, 
+              BinarySearchTree<Movie*>>> Store::collection;
 
 //store destructor
 Store::~Store()
 {
-	//hashmap customerList releases space made for hash elements and Customers
-	//BST releses Movie space
-	//release commands
+	// hashmap customerList releases space made for hash elements
+	// and Customers
+	// BST releses Movie space
+	// release commands
 	while (!commandPtrs.empty())
 	{
 		delete commandPtrs.front();
@@ -41,8 +44,8 @@ Store::~Store()
 	}
 }
 
-//reads DVDs specifically because it adds all files to collection["D"]
-//reads input string and sends it to movie create function
+// reads DVDs specifically because it adds all files to collection["D"]
+// reads input string and sends it to movie create function
 void Store::readDVDMovies(std::string filename)
 {
   /*F, 10, Nora Ephron, You've Got Mail, 1998       
@@ -98,7 +101,8 @@ void Store::readCustomers(std::string filename)
 			ss >> custId;
 			ss.get(); // get space before name
 			std::getline(ss,custName);
-		//check if customer is in list, if not (nullptr returned) then add
+		//check if customer is in list, if not (nullptr returned) 
+			// then add
 			if (customerList.search(custId) == nullptr) 
 			{
 				Customer * cust = nullptr;
@@ -148,8 +152,10 @@ void Store::readCommands(std::string filename)
 void Store::printInventory()
 {
 	std::cout << "Inventory: " << std::endl;
-	for (std::map<std::string, std::map<std::string, BinarySearchTree<Movie*>>>
-		::iterator mediaTypeIt = collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
+	for (std::map<std::string, std::map<std::string, 
+	           BinarySearchTree<Movie*>>>
+		::iterator mediaTypeIt =
+	     collection.begin(); mediaTypeIt != collection.end(); mediaTypeIt++)
 	{
 		// prints the string vlaue for media type
 		std::cout << mediaTypeIt->first << ": " << endl;
