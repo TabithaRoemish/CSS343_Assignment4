@@ -32,9 +32,11 @@ void Drama::print()
 // if director is same, retuns true if the this title is > than the object
 bool Drama::operator>(Drama & dm)
 {
+	// comapres the directors
     if (this->director > dm.director)
         return true;
     else if (this->director == dm.director)
+	    // comapres the titles if directors are equal
         if (this->title > dm.title)
             return true;
     return false;
@@ -43,6 +45,7 @@ bool Drama::operator>(Drama & dm)
 // returns true if the director and teh title are same
 bool Drama::operator==(Drama & dm)
 {
+	// comapres the directors and titles
     if (this->director == dm.director && this->title == dm.title)
         return true;
     else
@@ -52,6 +55,7 @@ bool Drama::operator==(Drama & dm)
 // uses dynamic cast to comapre movie object and drama object
 bool Drama::operator>(Movie & mv)
 {
+	// returns true if this is > movie object
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *this > *ptr;
 }
@@ -59,6 +63,7 @@ bool Drama::operator>(Movie & mv)
 // uses dynamic cast to comapre movie object and drama object
 bool Drama::operator<(Movie & mv)
 {
+	// returns true if this is < movie object
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *ptr > *this;
 }
@@ -66,6 +71,7 @@ bool Drama::operator<(Movie & mv)
 // uses dynamic cast to comapre movie object and drama object
 bool Drama::operator==(Movie & mv)
 {
+	// returns true if this is = movie object
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *this == *ptr;
 }
@@ -84,7 +90,6 @@ void Drama::rtnMovie()
 }
 
 //accessors for private variables
-
 std::string Drama::getTitle() const
 {
 	return title;
