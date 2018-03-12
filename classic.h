@@ -4,6 +4,9 @@
 //	File contains: classic class declaration
 //      Inherits from the Movie class. Holds a single Classic movie type’s attributes.
 
+////////////////////////////////////////////////////////////////////////////////
+// This is 80 characters - Keep all lines under 80 characters                 //
+////////////////////////////////////////////////////////////////////////////////
 
 #ifndef CLASSIC_H
 #define CLASSIC_H
@@ -13,7 +16,8 @@
 class Classic : public Movie
 {
 public:
-	Classic(int stock, std::string director, std::string title, std::string actor, int month, int year);
+	Classic(int stock, std::string director, std::string title, 
+	std::string actor, int month, int year);
 	virtual ~Classic() {};
 	virtual void print(); //C, 10, George Cukor, Holiday, Cary Grant 9 1938
 
@@ -34,7 +38,6 @@ public:
 	virtual bool operator==(Movie & mv);
 
 private:
-
 	int stock;
 	std::string genre;
 	std::string director;
@@ -42,8 +45,10 @@ private:
 	std::string actor;
 	int releaseMonth;
 	int releaseYear;
-	std::string key; //Title + year to store in BST and we can check key match rather than check random properties
-
+	// Title + year to store in BST and we can check 
+	// key match rather than check random properties
+	std::string key; 
+	
 };
 
 
