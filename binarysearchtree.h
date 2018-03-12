@@ -104,7 +104,7 @@ private:
 	BinaryNode<ItemType> * readTreeHelper(int start, int end, ItemType arr[]);
 	bool compare(BinaryNode<ItemType> * t1, BinaryNode<ItemType> * t2) const;
 	void saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i);
-	static int insertCount;
+
 
 	//Rental Store custom functions
 	void printHelper(BinaryNode<ItemType>* current);
@@ -115,8 +115,6 @@ private:
 	
 };
 
-template<class ItemType>
-int BinarySearchTree<ItemType>::insertCount = 0;
 
 
 /////////////////////////////////////////////////////
@@ -160,11 +158,11 @@ int BinarySearchTree<ItemType>::getNumberOfNodes() const {
 template<class ItemType>
 bool BinarySearchTree<ItemType>::add(const ItemType& item) {
 
-	//if (insertCount == 5)
-	//{
-	//	rebalance();
-	//	insertCount = 0;
-	//}
+	int nodes = getNumberOfNodes();
+	if (getNumberOfNodes() > 4)
+	{
+		rebalance();
+	}
 
 	if (rootPtr == nullptr)
 		rootPtr = new BinaryNode<ItemType>(item);
@@ -176,7 +174,6 @@ bool BinarySearchTree<ItemType>::add(const ItemType& item) {
 		{
 			BinaryNode<ItemType> * tempNewNode = new BinaryNode<ItemType>(item);
 			placeNode(rootPtr, tempNewNode);
-			insertCount++;
 		}
 	}
 	return true;
@@ -335,8 +332,8 @@ bool BinarySearchTree<ItemType>::readTree(ItemType arr[], int n) {
 
 			 //adding this since readTree is public and 
 			 // readtreehelper requires a sorted array to build a binary search tree
-	if (!(is_sorted(arr, arr + n)))
-		sort(arr, arr + n);
+	/*if (!(is_sorted(arr, arr + n)))
+		sort(arr, arr + n);*/
 
 	rootPtr = readTreeHelper(0, n - 1, arr);	// fill tree
 
@@ -445,7 +442,6 @@ inorder(void visit(ItemType&), BinaryNode<ItemType> * current) const
 }
 
 //customized for Rental Store
-//add dereferencing to add Movie objects to array
 template<class ItemType>
 void BinarySearchTree<ItemType>::
 saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i)
@@ -453,7 +449,7 @@ saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i)
 	if (current != nullptr)
 	{
 		saveToArray(current->getLeftChildPtr(), arr, i);
-		arr[i] = *current->getItem();
+		arr[i] = current->getItem();
 		i++;
 		saveToArray(current->getRightChildPtr(), arr, i);
 	}
