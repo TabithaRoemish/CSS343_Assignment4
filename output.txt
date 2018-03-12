@@ -1,0 +1,267 @@
+Script started on Sun 11 Mar 2018 09:27:22 PM PDT
+tabithar@uw1-320-15:~/Homework$ g++ -std=c++14 -g -Wall -Wextra binarynode.cpp b inarysearchtree.cpp command.cpp borrow.cpp history.cpp inventory.cpp return.cpp  movie.cpp classic.cpp comedy.cpp drama.cpp hashtable.cpp customer.cpp store.cpp  ass4.cpp -o ass4
+tabithar@uw1-320-15:~/Homework$ ./ass4
+Inventory: 
+D: 
+   C: 
+      C, 10, George Cukor, Holiday, Cary Grant, 9 1938
+      C, 10, George Cukor, Holiday, Katherine Hepburn, 9 1938
+      C, 10, Victor Fleming, Gone With the Wind, Clark Gable, 2 1939
+      C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+      C, 10, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+      C, 10, George Cukor, The Philadelphia Story, Cary Grant, 5 1940
+      C, 10, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+      C, 10, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+      C, 10, Michael Curtiz, Casablanca, Humphrey Bogart, 8 1942
+      C, 10, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+      C, 10, Frank Capra, It's a Wonderful Life, Donna Reed, 11 1946
+      C, 10, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+      C, 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+      C, 10, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+   D: 
+      D, 10, Barry Levinson, Good Morning Vietnam, 1988
+      D, 10, Clint Eastwood, Unforgiven, 1992
+      D, 10, Gus Van Sant, Good Will Hunting, 2000
+      D, 10, Jonathan Demme, Silence of the Lambs, 1991
+      D, 10, Nancy Savoca, Dogfight, 1991
+      D, 10, Phillippe De Broca, King of Hearts, 1967
+      D, 10, Steven Spielberg, Schindler's List, 1993
+   F: 
+      F, 10, Woody Allen, Annie Hall, 1977
+      F, 10, Joel Coen, Fargo, 1996
+      F, 10, John Landis, National Lampoon's Animal House, 1978
+      F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+      F, 10, Nora Ephron, Sleepless in Seattle, 1993
+      F, 10, Rob Reiner, When Harry Met Sally, 1989
+      F, 10, Nora Ephron, You've Got Mail, 1998
+
+1000 Mouse Minnie
+
+5000 Frog Freddie
+
+8000 Wacky Wally
+
+Z is an invalid video code
+Customer ID: 0 is not valid
+Zis an invalid command code
+Customer ID: 1234 is not valid
+The movie, F: Bogus Title 2001 does not exist
+Z is an invalid media code
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+The movie, D: Bogus Title Steven Spielberg does not exist
+Inventory: 
+D: 
+   C: 
+      C, 9, George Cukor, Holiday, Cary Grant, 9 1938
+      C, 10, George Cukor, Holiday, Katherine Hepburn, 9 1938
+      C, 10, Victor Fleming, Gone With the Wind, Clark Gable, 2 1939
+      C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+      C, 10, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+      C, 9, George Cukor, The Philadelphia Story, Cary Grant, 5 1940
+      C, 9, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+      C, 9, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+      C, 10, Michael Curtiz, Casablanca, Humphrey Bogart, 8 1942
+      C, 10, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+      C, 10, Frank Capra, It's a Wonderful Life, Donna Reed, 11 1946
+      C, 10, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+      C, 9, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+      C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+   D: 
+      D, 9, Barry Levinson, Good Morning Vietnam, 1988
+      D, 9, Clint Eastwood, Unforgiven, 1992
+      D, 9, Gus Van Sant, Good Will Hunting, 2000
+      D, 9, Jonathan Demme, Silence of the Lambs, 1991
+      D, 8, Nancy Savoca, Dogfight, 1991
+      D, 9, Phillippe De Broca, King of Hearts, 1967
+      D, 9, Steven Spielberg, Schindler's List, 1993
+   F: 
+      F, 9, Woody Allen, Annie Hall, 1977
+      F, 9, Joel Coen, Fargo, 1996
+      F, 9, John Landis, National Lampoon's Animal House, 1978
+      F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+      F, 9, Nora Ephron, Sleepless in Seattle, 1993
+      F, 9, Rob Reiner, When Harry Met Sally, 1989
+      F, 9, Nora Ephron, You've Got Mail, 1998
+
+1000 Mouse Minnie
+  Borrowed: Drama, 9, Good Morning Vietnam, Barry Levinson
+  Borrowed: Classic, 9, The Philadelphia Story, George Cukor
+  Borrowed: Drama, 9, Good Will Hunting, Gus Van Sant
+  Borrowed: Classic, 9, The Philadelphia Story, George Cukor
+  Borrowed: Classic, 8, Harold and Maude, Hal Ashby
+
+1111 Mouse Mickey
+  Borrowed: Classic, 8, A Clockwork Orange, Stanley Kubrick
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 9, The Maltese Falcon, John Huston
+  Borrowed: Classic, 9, Holiday, George Cukor
+
+5000 Frog Freddie
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Returned: Classic, 10, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Returned: Classic, 10, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 5, Harold and Maude, Hal Ashby
+  Returned: Classic, 6, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 5, Harold and Maude, Hal Ashby
+
+8000 Wacky Wally
+  Borrowed: Comedy, 9, You've Got Mail, Nora Ephron
+  Returned: Comedy, 10, You've Got Mail, Nora Ephron
+  Borrowed: Classic, 7, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 6, Harold and Maude, Hal Ashby
+  Borrowed: Comedy, 9, National Lampoon's Animal House, John Landis
+
+8888 Pig Porky
+  Borrowed: Comedy, 9, Annie Hall, Woody Allen
+  Borrowed: Comedy, 9, When Harry Met Sally, Rob Reiner
+  Borrowed: Drama, 9, Silence of the Lambs, Jonathan Demme
+  Borrowed: Drama, 9, Dogfight, Nancy Savoca
+  Borrowed: Classic, 4, Harold and Maude, Hal Ashby
+
+tabithar@uw1-320-15:~/Homework$ valgrind ./a[Kass4
+==13937== Memcheck, a memory error detector
+==13937== Copyright (C) 2002-2015, and GNU GPL'd, by Julian Seward et al.
+==13937== Using Valgrind-3.11.0 and LibVEX; rerun with -h for copyright info
+==13937== Command: ./ass4
+==13937== 
+Inventory: 
+D: 
+   C: 
+      C, 10, George Cukor, Holiday, Cary Grant, 9 1938
+      C, 10, George Cukor, Holiday, Katherine Hepburn, 9 1938
+      C, 10, Victor Fleming, Gone With the Wind, Clark Gable, 2 1939
+      C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+      C, 10, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+      C, 10, George Cukor, The Philadelphia Story, Cary Grant, 5 1940
+      C, 10, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+      C, 10, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+      C, 10, Michael Curtiz, Casablanca, Humphrey Bogart, 8 1942
+      C, 10, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+      C, 10, Frank Capra, It's a Wonderful Life, Donna Reed, 11 1946
+      C, 10, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+      C, 10, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+      C, 10, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+   D: 
+      D, 10, Barry Levinson, Good Morning Vietnam, 1988
+      D, 10, Clint Eastwood, Unforgiven, 1992
+      D, 10, Gus Van Sant, Good Will Hunting, 2000
+      D, 10, Jonathan Demme, Silence of the Lambs, 1991
+      D, 10, Nancy Savoca, Dogfight, 1991
+      D, 10, Phillippe De Broca, King of Hearts, 1967
+      D, 10, Steven Spielberg, Schindler's List, 1993
+   F: 
+      F, 10, Woody Allen, Annie Hall, 1977
+      F, 10, Joel Coen, Fargo, 1996
+      F, 10, John Landis, National Lampoon's Animal House, 1978
+      F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+      F, 10, Nora Ephron, Sleepless in Seattle, 1993
+      F, 10, Rob Reiner, When Harry Met Sally, 1989
+      F, 10, Nora Ephron, You've Got Mail, 1998
+
+1000 Mouse Minnie
+
+5000 Frog Freddie
+
+8000 Wacky Wally
+
+Z is an invalid video code
+Customer ID: 0 is not valid
+Zis an invalid command code
+Customer ID: 1234 is not valid
+The movie, F: Bogus Title 2001 does not exist
+Z is an invalid media code
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+Movie out of stock: C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+The movie, D: Bogus Title Steven Spielberg does not exist
+Inventory: 
+D: 
+   C: 
+      C, 9, George Cukor, Holiday, Cary Grant, 9 1938
+      C, 10, George Cukor, Holiday, Katherine Hepburn, 9 1938
+      C, 10, Victor Fleming, Gone With the Wind, Clark Gable, 2 1939
+      C, 10, Victor Fleming, Gone With the Wind, Vivien Leigh, 2 1939
+      C, 10, Victor Fleming, The Wizard of Oz, Judy Garland, 7 1939
+      C, 9, George Cukor, The Philadelphia Story, Cary Grant, 5 1940
+      C, 9, George Cukor, The Philadelphia Story, Katherine Hepburn, 5 1940
+      C, 9, John Huston, The Maltese Falcon, Humphrey Bogart, 10 1941
+      C, 10, Michael Curtiz, Casablanca, Humphrey Bogart, 8 1942
+      C, 10, Michael Curtiz, Casablanca, Ingrid Bergman, 8 1942
+      C, 10, Frank Capra, It's a Wonderful Life, Donna Reed, 11 1946
+      C, 10, Frank Capra, It's a Wonderful Life, James Steward, 11 1946
+      C, 9, Stanley Kubrick, A Clockwork Orange, Malcolm McDowell, 2 1971
+      C, 0, Hal Ashby, Harold and Maude, Ruth Gordon, 3 1971
+   D: 
+      D, 9, Barry Levinson, Good Morning Vietnam, 1988
+      D, 9, Clint Eastwood, Unforgiven, 1992
+      D, 9, Gus Van Sant, Good Will Hunting, 2000
+      D, 9, Jonathan Demme, Silence of the Lambs, 1991
+      D, 8, Nancy Savoca, Dogfight, 1991
+      D, 9, Phillippe De Broca, King of Hearts, 1967
+      D, 9, Steven Spielberg, Schindler's List, 1993
+   F: 
+      F, 9, Woody Allen, Annie Hall, 1977
+      F, 9, Joel Coen, Fargo, 1996
+      F, 9, John Landis, National Lampoon's Animal House, 1978
+      F, 10, Gore Verbinski, Pirates of the Caribbean, 2003
+      F, 9, Nora Ephron, Sleepless in Seattle, 1993
+      F, 9, Rob Reiner, When Harry Met Sally, 1989
+      F, 9, Nora Ephron, You've Got Mail, 1998
+
+1000 Mouse Minnie
+  Borrowed: Drama, 9, Good Morning Vietnam, Barry Levinson
+  Borrowed: Classic, 9, The Philadelphia Story, George Cukor
+  Borrowed: Drama, 9, Good Will Hunting, Gus Van Sant
+  Borrowed: Classic, 9, The Philadelphia Story, George Cukor
+  Borrowed: Classic, 8, Harold and Maude, Hal Ashby
+
+1111 Mouse Mickey
+  Borrowed: Classic, 8, A Clockwork Orange, Stanley Kubrick
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 9, The Maltese Falcon, John Huston
+  Borrowed: Classic, 9, Holiday, George Cukor
+
+5000 Frog Freddie
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Returned: Classic, 10, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 9, Harold and Maude, Hal Ashby
+  Returned: Classic, 10, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 5, Harold and Maude, Hal Ashby
+  Returned: Classic, 6, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 5, Harold and Maude, Hal Ashby
+
+8000 Wacky Wally
+  Borrowed: Comedy, 9, You've Got Mail, Nora Ephron
+  Returned: Comedy, 10, You've Got Mail, Nora Ephron
+  Borrowed: Classic, 7, Harold and Maude, Hal Ashby
+  Borrowed: Classic, 6, Harold and Maude, Hal Ashby
+  Borrowed: Comedy, 9, National Lampoon's Animal House, John Landis
+
+8888 Pig Porky
+  Borrowed: Comedy, 9, Annie Hall, Woody Allen
+  Borrowed: Comedy, 9, When Harry Met Sally, Rob Reiner
+  Borrowed: Drama, 9, Silence of the Lambs, Jonathan Demme
+  Borrowed: Drama, 9, Dogfight, Nancy Savoca
+  Borrowed: Classic, 4, Harold and Maude, Hal Ashby
+
+==13937== 
+==13937== HEAP SUMMARY:
+==13937==     in use at exit: 72,704 bytes in 1 blocks
+==13937==   total heap usage: 899 allocs, 898 frees, 157,983 bytes allocated
+==13937== 
+==13937== LEAK SUMMARY:
+==13937==    definitely lost: 0 bytes in 0 blocks
+==13937==    indirectly lost: 0 bytes in 0 blocks
+==13937==      possibly lost: 0 bytes in 0 blocks
+==13937==    still reachable: 72,704 bytes in 1 blocks
+==13937==         suppressed: 0 bytes in 0 blocks
+==13937== Rerun with --leak-check=full to see details of leaked memory
+==13937== 
+==13937== For counts of detected and suppressed errors, rerun with: -v
+==13937== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
+tabithar@uw1-320-15:~/Homework$ exit
+
+Script done on Sun 11 Mar 2018 09:27:58 PM PDT

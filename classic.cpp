@@ -28,6 +28,7 @@ void Classic::print()
     << this->releaseYear << std::endl;
 }
 
+//Classic sorted by release date and then actor
 bool Classic::operator>(Classic & cl)
 {
     if (this->releaseYear > cl.releaseYear)

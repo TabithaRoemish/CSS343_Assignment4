@@ -2,6 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: February 23, 2018
 //	File contains: inventory class declaration
+//      Inherits from the Command class. The Inventory class has 
+//      one method, getInventory, which prints the inventory of the Store.
 
 #ifndef INVENTORY_H
 #define INVENTORY_H
@@ -11,10 +13,10 @@
 class Inventory : public Command
 {
 public:
-	Inventory();
-	virtual ~Inventory() {};
-	virtual void print();
-	virtual void execute();
+	Inventory(); // constructor 
+	virtual ~Inventory() {}; // destructor
+	virtual void print(); // prints the inventory of the Store.
+	virtual void execute(); // virtual execute method 
 };
 
 #endif

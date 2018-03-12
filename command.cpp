@@ -2,6 +2,8 @@
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
 //	Date: March 4, 2018
 //	File contains: command abstract class definitions
+//      Parent class to Borrow, Return, Inventory & History classes. 
+//      This is an abstract class where the child classes must implement the methods within it. 
 
 #include "command.h"
 #include "borrow.h"
@@ -11,7 +13,18 @@
 #include "store.h"
 #include <iostream>
 #include <sstream>
+
 #include <string>
+
+
+//B 1234 D C 9 1938 Katherine Hepburn 
+//B 1234 D F Pirates of the Caribbean, 2003 
+//R 1234 D C 9 1938 Katherine Hepburn 
+//B 1234 D D Steven Spielberg, Schindler's List, 
+//S 
+//H 1234
+
+// create command
 
 Command * Command::create(std::string identifier)
 {
@@ -121,30 +134,37 @@ Command * Command::create(std::string identifier)
 	return cmd;
 }
 
+// make method
 Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 {
+	// command obbject pointer to return
 	Command * cmd = nullptr;
+	// switch statement to see the type of command
 	switch (actionType) {
 	case 'B':
 	{
+		// creates obbject
 		cmd = new Borrow(cust, mv);
 		cmd->execute();
 		break;
 	}
 	case 'R':
 	{
+		// creates obbject
 		cmd = new Return(cust, mv);
 		cmd->execute();
 		break;
 	}
 	case 'I':
-	{
+	{	
+		// creates obbject
 		cmd = new Inventory();
 		cmd->execute();
 		break;
 	}
 	case 'H':
 	{
+		// creates obbject
 		cmd = new History(cust);
 		cmd->execute();
 		break;
@@ -153,14 +173,9 @@ Command * Command::make(char actionType,  Customer * cust, Movie * mv)
 		std::cout << "Invalid Action Code" << std::endl;
 	}
 
+	// returns the command object
 	return cmd;
 }
 
-bool Command::isMovie(std::string media, std::string movC, std::string key)
-{
-	bool answer = false;
-	if (Store::collection[media][movC].findWithString(key) == 1)
-		answer = true;
-	return answer;
-}
+
 

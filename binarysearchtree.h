@@ -158,11 +158,11 @@ int BinarySearchTree<ItemType>::getNumberOfNodes() const {
 template<class ItemType>
 bool BinarySearchTree<ItemType>::add(const ItemType& item) {
 
-	int nodes = getNumberOfNodes();
+	/*int nodes = getNumberOfNodes();
 	if (getNumberOfNodes() > 4)
 	{
 		rebalance();
-	}
+	}*/
 
 	if (rootPtr == nullptr)
 		rootPtr = new BinaryNode<ItemType>(item);
@@ -320,7 +320,7 @@ void BinarySearchTree<ItemType>::rebalance() {
 	//save to array
 	int size = getNumberOfNodes();
 	ItemType * arrPtr = new ItemType[size];
-	saveToArray(rootPtr, arrPtr, 0);
+	saveToArray(rootPtr, arrPtr[0], 0);
 	// build tree from array
 	readTree(arrPtr, size);
 	delete[] arrPtr;
@@ -450,6 +450,9 @@ saveToArray(BinaryNode<ItemType> * current, ItemType arr[], int i)
 	{
 		saveToArray(current->getLeftChildPtr(), arr, i);
 		arr[i] = current->getItem();
+		std::cout << i << ": " << current->getItem();
+		std::cout << current->getItem()->getTitle() << endl;
+		std::cout << arr[i];
 		i++;
 		saveToArray(current->getRightChildPtr(), arr, i);
 	}

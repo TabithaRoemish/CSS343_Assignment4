@@ -1,11 +1,13 @@
-//	File Name: drama.cpp
+//	File Name: drama.h
 //	Programmer: Tabitha Roemish & Prathyusha Pillari
-//	Date: March 2, 2018
-//	File contains: drama class definitions
+//	Date: February 23, 2018
+//	File contains: drama class declaration [D]
+//      Inherits from the Movie class. Holds a single Drama movie type’s attributes.
 
 #include "drama.h"
 #include <iostream>
 
+// initializes the variables 
 Drama::Drama(int stock, std::string director, std::string title, int year)
 {
     this->stock = stock;
@@ -16,6 +18,7 @@ Drama::Drama(int stock, std::string director, std::string title, int year)
 	this->genre = "Drama";
 }
 
+// prints the drama string
 void Drama::print()
 {
     // D, 10, Steven Spielberg, Schindler's List, 1993
@@ -24,7 +27,9 @@ void Drama::print()
     std::cout << "D, " << this->stock << ", " << this->director << ", " <<
     this->title << ", " << this->releaseYear << std::endl;
 }
-				  
+
+// returns true if the this director is > than the object
+// if director is same, retuns true if the this title is > than the object
 bool Drama::operator>(Drama & dm)
 {
     if (this->director > dm.director)
@@ -35,6 +40,7 @@ bool Drama::operator>(Drama & dm)
     return false;
 }
 
+// returns true if the director and teh title are same
 bool Drama::operator==(Drama & dm)
 {
     if (this->director == dm.director && this->title == dm.title)
@@ -43,43 +49,41 @@ bool Drama::operator==(Drama & dm)
         return false;
 }
 
+// uses dynamic cast to comapre movie object and drama object
 bool Drama::operator>(Movie & mv)
 {
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *this > *ptr;
 }
 
+// uses dynamic cast to comapre movie object and drama object
 bool Drama::operator<(Movie & mv)
 {
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *ptr > *this;
 }
+
+// uses dynamic cast to comapre movie object and drama object
 bool Drama::operator==(Movie & mv)
 {
 	Drama * ptr = dynamic_cast<Drama*>(&mv);
 	return *this == *ptr;
 }
 
-std::string Drama::getKey() const
-{
-	return key;
-}
-
-int Drama::getStock() const
-{
-	return stock;
-}
-
+//subtracts one from current stock
 void Drama::brwMovie()
 {
 	if (stock > 0)
 		stock--;
 }
 
+//adds one to current stock
 void Drama::rtnMovie()
 {
 	stock++;
 }
+
+//accessors for private variables
 
 std::string Drama::getTitle() const
 {
@@ -97,4 +101,14 @@ std::string Drama::getDirector() const
 int Drama::getReleaseYear() const
 {
 	return releaseYear;
+}
+
+std::string Drama::getKey() const
+{
+	return key;
+}
+//returns current stock of movie
+int Drama::getStock() const
+{
+	return stock;
 }
